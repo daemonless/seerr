@@ -11,7 +11,7 @@ RUN pkg update && pkg install -y \
     FreeBSD-clang FreeBSD-lld FreeBSD-toolchain FreeBSD-clibs-dev FreeBSD-runtime-dev \
     FreeBSD-zlib-dev FreeBSD-openssl-dev FreeBSD-xz-dev FreeBSD-bzip2-dev \
     ca_root_nss \
-    && pkg clean -ay
+    && pkg clean -ay && rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
 
 RUN ln -sf /usr/bin/clang /usr/bin/cc && \
     ln -sf /usr/bin/clang++ /usr/bin/c++
@@ -34,7 +34,8 @@ WORKDIR /app/seerr
 # --- Stage: production dependencies ---
 FROM base AS prod-deps
 RUN CYPRESS_INSTALL_BINARY=0 pnpm install --prod --frozen-lockfile --ignore-scripts && \
-    pnpm rebuild sqlite3 bcrypt
+    pnpm rebuild sqlite3 bcrypt && \
+    rm -rf $(pnpm store path)
 
 # --- Stage: build ---
 FROM base AS build
@@ -72,8 +73,8 @@ PATCH
 RUN NEXT_DIR=$(ls -d node_modules/.pnpm/next@*/node_modules/next) && \
     node /tmp/patch-swc.js "${NEXT_DIR}"
 
-RUN pnpm build
-RUN rm -rf .next/cache
+RUN pnpm build && \
+    rm -rf .next/cache $(pnpm store path)
 
 # --- Stage: production image ---
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
