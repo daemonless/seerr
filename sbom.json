@@ -1,12 +1,12 @@
 {
   "image": "seerr",
-  "generated": "2026-02-16T21:52:37Z",
+  "generated": "2026-02-16T22:23:59Z",
   "tags": {
     "latest": {
       "arch": "amd64",
       "app_version": "3.0.1",
       "source": "upstream",
-      "generated": "2026-02-16T21:52:21Z",
+      "generated": "2026-02-16T22:23:41Z",
       "packages": {
         "freebsd": [
           {
