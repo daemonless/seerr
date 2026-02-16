@@ -1,0 +1,38 @@
+name: seerr
+
+x-daemonless:
+  title: "Seerr"
+  icon: ":material-eye:"
+  category: "Media Management"
+  description: "Unified media request management (Plex, Jellyfin, Emby) on FreeBSD."
+  upstream_url: "https://github.com/seerr-team/seerr"
+  web_url: "https://seerr.io/"
+  user: "bsd"
+  mlock: false
+
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+    volumes:
+      /config: "Configuration and database directory"
+    ports:
+      5055: "Web UI"
+
+services:
+  seerr:
+    image: ghcr.io/daemonless/seerr:latest
+    container_name: seerr
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/containers/seerr:/config
+
+    ports:
+      - 5055:5055
