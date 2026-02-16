@@ -1,5 +1,6 @@
 #!/bin/sh
 # Seerr s6 service
+exec 2>&1
 
 export HOME=/config
 export NODE_ENV=production

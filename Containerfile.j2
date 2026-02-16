@@ -79,7 +79,7 @@ RUN rm -rf .next/cache
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node22 vips"
+ARG PACKAGES="node22 vips sqlite3"
 ARG UPSTREAM_URL="https://api.github.com/repos/seerr-team/seerr/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
 {%- if ports %}
