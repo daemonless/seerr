@@ -129,6 +129,10 @@ COPY --from=prod-deps --chown=bsd:bsd /app/seerr/node_modules /app/seerr/node_mo
 COPY --from=build --chown=bsd:bsd /app/seerr/.next /app/seerr/.next
 COPY --from=build --chown=bsd:bsd /app/seerr/dist /app/seerr/dist
 
+# Fix fresh-install crash: enable synchronize (creates schema) and skip broken migrations
+RUN node -e "let f='/app/seerr/dist/datasource.js',s=require('fs').readFileSync(f,'utf8');require('fs').writeFileSync(f,s.replace('synchronize: false','synchronize: true'))" && \
+    node -e "let f='/app/seerr/dist/index.js',s=require('fs').readFileSync(f,'utf8');require('fs').writeFileSync(f,s.replace(/await dbConnection\.runMigrations\(\)/g,'/* migrations handled by synchronize */'))"
+
 # Create config directory
 RUN mkdir -p /config && chown bsd:bsd /config
 
