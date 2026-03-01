@@ -1,12 +1,12 @@
 {
   "image": "seerr",
-  "generated": "2026-02-17T01:30:41Z",
+  "generated": "2026-03-01T09:29:41Z",
   "tags": {
     "latest": {
       "arch": "amd64",
-      "app_version": "3.0.1",
+      "app_version": "3.1.0",
       "source": "upstream",
-      "generated": "2026-02-17T01:30:23Z",
+      "generated": "2026-03-01T09:29:24Z",
       "packages": {
         "freebsd": [
           {
@@ -687,7 +687,7 @@
           },
           {
             "name": "nss",
-            "version": "3.120"
+            "version": "3.121"
           },
           {
             "name": "oniguruma",
@@ -1525,6 +1525,10 @@
           {
             "name": "@floating-ui/utils",
             "version": "0.2.10"
+          },
+          {
+            "name": "@fontsource-variable/inter",
+            "version": "5.2.8"
           },
           {
             "name": "@formatjs/ecma402-abstract",
@@ -5188,7 +5192,7 @@
           },
           {
             "name": "seerr",
-            "version": "3.0.1"
+            "version": "3.1.0"
           },
           {
             "name": "selderee",
@@ -5930,12 +5934,12 @@
         "dotnet": 0,
         "go": 0,
         "java": 0,
-        "node": 1251,
+        "node": 1252,
         "php": 0,
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1476
+        "total": 1477
       }
     }
   }
