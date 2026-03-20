@@ -9,6 +9,7 @@ x-daemonless:
   web_url: "https://seerr.io/"
   user: "bsd"
   mlock: false
+  appjail: true
 
   docs:
     env:

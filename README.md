@@ -5,15 +5,27 @@ Source: dbuild templates
 
 # Seerr
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/seerr/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/seerr/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/daemonless/seerr?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/seerr/commits)
+
 Unified media request management (Plex, Jellyfin, Emby) on FreeBSD.
 
 | | |
 |---|---|
 | **Port** | 5055 |
 | **Registry** | `ghcr.io/daemonless/seerr` |
-| **Docs** | [daemonless.io/images/seerr](https://daemonless.io/images/seerr/) |
 | **Source** | [https://github.com/seerr-team/seerr](https://github.com/seerr-team/seerr) |
 | **Website** | [https://seerr.io/](https://seerr.io/) |
+
+## Version Tags
+
+| Tag | Description | Best For |
+| :--- | :--- | :--- |
+| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+
+## Prerequisites
+
+Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
 
@@ -29,10 +41,54 @@ services:
       - PGID=1000
       - TZ=UTC
     volumes:
-      - /path/to/containers/seerr:/config
+      - "/path/to/containers/seerr:/config"
     ports:
       - 5055:5055
     restart: unless-stopped
+```
+
+### AppJail Director
+
+**.env**:
+
+```
+DIRECTOR_PROJECT=seerr
+PUID=1000
+PGID=1000
+TZ=UTC
+```
+
+**appjail-director.yml**:
+
+```yaml
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  seerr:
+    name: seerr
+    options:
+      - container: 'boot args:--pull'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+    volumes:
+      - seerr: /config
+volumes:
+  seerr:
+    device: '/path/to/containers/seerr'
+```
+
+**Makejail**:
+
+```
+ARG tag=latest
+
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/seerr:${tag}
 ```
 
 ### Podman CLI
@@ -40,13 +96,12 @@ services:
 ```bash
 podman run -d --name seerr \
   -p 5055:5055 \
-  -e PUID=@PUID@ \
-  -e PGID=@PGID@ \
-  -e TZ=@TZ@ \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
   -v /path/to/containers/seerr:/config \
   ghcr.io/daemonless/seerr:latest
 ```
-Access at: `http://localhost:5055`
 
 ### Ansible
 
@@ -58,16 +113,19 @@ Access at: `http://localhost:5055`
     state: started
     restart_policy: always
     env:
-      PUID: "@PUID@"
-      PGID: "@PGID@"
-      TZ: "@TZ@"
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
     ports:
       - "5055:5055"
     volumes:
       - "/path/to/containers/seerr:/config"
 ```
 
-## Configuration
+Access at: `http://localhost:5055`
+
+## Parameters
+
 ### Environment Variables
 
 | Variable | Default | Description |
@@ -75,19 +133,23 @@ Access at: `http://localhost:5055`
 | `PUID` | `1000` | User ID for the application process |
 | `PGID` | `1000` | Group ID for the application process |
 | `TZ` | `UTC` | Timezone for the container |
+
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | Configuration and database directory |
+
 ### Ports
 
 | Port | Protocol | Description |
 |------|----------|-------------|
 | `5055` | TCP | Web UI |
 
-## Notes
+**Architectures:** amd64
+**User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
+**Base:** FreeBSD 15.0
 
-- **Architectures:** amd64
-- **User:** `bsd` (UID/GID set via PUID/PGID)
-- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
+---
+
+Need help? Join our [Discord](https://discord.gg/Kb9tkhecZT) community.
