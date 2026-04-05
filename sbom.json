@@ -1,13 +1,13 @@
 {
+  "generated": "2026-04-05T20:23:15Z",
   "image": "seerr",
-  "generated": "2026-03-28T16:55:24Z",
   "tags": {
     "latest": {
-      "arch": "amd64",
       "app_version": "3.1.0",
-      "source": "upstream",
-      "generated": "2026-03-28T16:55:06Z",
+      "arch": "amd64",
+      "generated": "2026-04-05T20:21:58Z",
       "packages": {
+        "dotnet": [],
         "freebsd": [
           {
             "name": "FreeBSD-audit-lib",
@@ -735,7 +735,7 @@
           },
           {
             "name": "perl5",
-            "version": "5.42.0_1"
+            "version": "5.42.2"
           },
           {
             "name": "pinentry",
@@ -796,10 +796,6 @@
           {
             "name": "s6",
             "version": "2.13.2.0"
-          },
-          {
-            "name": "s6-rc",
-            "version": "0.5.6.0"
           },
           {
             "name": "shaderc",
@@ -902,7 +898,6 @@
             "version": "1.5.7_1"
           }
         ],
-        "dotnet": [],
         "go": [],
         "java": [],
         "node": [
@@ -5933,9 +5928,10 @@
         "ruby": [],
         "rust": []
       },
+      "source": "upstream",
       "summary": {
-        "freebsd": 223,
         "dotnet": 0,
+        "freebsd": 222,
         "go": 0,
         "java": 0,
         "node": 1252,
@@ -5943,7 +5939,7 @@
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1478
+        "total": 1477
       }
     }
   }
