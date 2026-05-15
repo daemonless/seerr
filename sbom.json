@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-06T23:30:45Z",
+  "generated": "2026-05-15T23:25:25Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.2.0",
       "arch": "amd64",
-      "generated": "2026-05-06T23:29:25Z",
+      "generated": "2026-05-15T23:24:11Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -179,7 +179,7 @@
           },
           {
             "name": "cfitsio",
-            "version": "4.6.3"
+            "version": "4.6.4"
           },
           {
             "name": "cgif",
@@ -195,7 +195,7 @@
           },
           {
             "name": "curl",
-            "version": "8.19.0_2"
+            "version": "8.20.0"
           },
           {
             "name": "dav1d",
@@ -215,7 +215,7 @@
           },
           {
             "name": "expat",
-            "version": "2.7.5"
+            "version": "2.8.0"
           },
           {
             "name": "ffmpeg",
@@ -743,7 +743,7 @@
           },
           {
             "name": "openexr",
-            "version": "3.4.9"
+            "version": "3.4.11"
           },
           {
             "name": "openh264",
