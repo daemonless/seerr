@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-15T23:25:25Z",
+  "generated": "2026-05-23T21:22:31Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.2.0",
       "arch": "amd64",
-      "generated": "2026-05-15T23:24:11Z",
+      "generated": "2026-05-23T21:21:16Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -171,7 +171,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.117_2"
+            "version": "3.123.1"
           },
           {
             "name": "cairo",
@@ -215,7 +215,7 @@
           },
           {
             "name": "expat",
-            "version": "2.8.0"
+            "version": "2.8.1"
           },
           {
             "name": "ffmpeg",
