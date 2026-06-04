@@ -25,6 +25,11 @@ RUN ln -sf /usr/bin/clang /usr/bin/cc && \
 RUN corepack enable
 
 ENV PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+# Build native addons against local node22 headers (no nodejs.org fetch -> no
+# ECONNRESET); CPPFLAGS adds system libuv's uv.h, which node22's headers omit.
+ENV npm_config_nodedir=/usr/local \
+    CPPFLAGS=-I/usr/local/include
 ENV NODE_OPTIONS="--max-old-space-size=2048"
 
 # Download source
@@ -37,37 +42,13 @@ RUN SEERR_VERSION=$(fetch -qo - "https://api.github.com/repos/seerr-team/seerr/r
 
 WORKDIR /app/seerr
 
-# --- Stage: production dependencies ---
-FROM base AS prod-deps
-RUN CYPRESS_INSTALL_BINARY=0 pnpm install --prod --frozen-lockfile --ignore-scripts && \
-    pnpm rebuild sqlite3 bcrypt && \
-    rm -rf $(pnpm store path)
-
-# --- Stage: build ---
-FROM base AS build
-
-RUN CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile
-
-# Patch Next.js SWC for FreeBSD: no native binary exists
-# 1. Install WASM SWC matching the Next.js minor version
-# 2. Copy WASM files into Next.js's wasm/ dir (bypasses pnpm resolution)
-# 3. Stub downloads, force WASM fallback, remove process.exit(1)
-RUN NEXT_DIR=$(ls -d node_modules/.pnpm/next@*/node_modules/next) && \
-    NEXT_VER=$(jq -r .version ${NEXT_DIR}/package.json) && \
-    NEXT_MINOR=$(echo ${NEXT_VER} | sed 's/\.[0-9]*$//') && \
-    echo "Next.js ${NEXT_VER}: installing WASM SWC ~${NEXT_MINOR}.0" && \
-    pnpm add "@next/swc-wasm-nodejs@~${NEXT_MINOR}.0" && \
-    WASM_SRC=$(ls -d node_modules/.pnpm/@next+swc-wasm-nodejs@*/node_modules/@next/swc-wasm-nodejs) && \
-    mkdir -p ${NEXT_DIR}/wasm/@next/swc-wasm-nodejs && \
-    cp -r ${WASM_SRC}/* ${NEXT_DIR}/wasm/@next/swc-wasm-nodejs/ && \
-    echo "WASM SWC copied to ${NEXT_DIR}/wasm/"
+# Next.js SWC patch for FreeBSD (no native binary): stub the downloads, force
+# the WASM fallback first, drop the hard exit. Used by both prod-deps and build.
 COPY <<'PATCH' /tmp/patch-swc.js
 const fs = require('fs');
 const p = process.argv[2];
-// Stub download functions (prevent 404 crashes)
 fs.writeFileSync(p + '/dist/lib/download-swc.js',
   'module.exports.downloadNativeNextSwc=async function(){};module.exports.downloadWasmSwc=async function(){};');
-// Force WASM-first path and remove hard exit
 let idx = fs.readFileSync(p + '/dist/build/swc/index.js', 'utf8');
 idx = idx.replace(
   /shouldLoadWasmFallbackFirst\s*=\s*[^;]+;/,
@@ -76,10 +57,72 @@ idx = idx.replace('process.exit(1)', '/* patched */');
 fs.writeFileSync(p + '/dist/build/swc/index.js', idx);
 console.log('SWC patched for FreeBSD WASM fallback');
 PATCH
-RUN NEXT_DIR=$(ls -d node_modules/.pnpm/next@*/node_modules/next) && \
-    node /tmp/patch-swc.js "${NEXT_DIR}"
 
-RUN pnpm build && \
+# Install the WASM SWC matching Next.js's minor and wire it into the next pkg.
+# $1 = optional extra pnpm flags (e.g. --prod env uses --ignore-scripts already).
+COPY <<'WASM' /usr/local/bin/setup-next-wasm.sh
+#!/bin/sh
+set -e
+NEXT_DIR=$(ls -d node_modules/.pnpm/next@*/node_modules/next)
+NEXT_VER=$(jq -r .version "${NEXT_DIR}/package.json")
+NEXT_MINOR=$(echo "${NEXT_VER}" | sed 's/\.[0-9]*$//')
+echo "Next.js ${NEXT_VER}: installing WASM SWC ~${NEXT_MINOR}.0"
+pnpm add --ignore-scripts "@next/swc-wasm-nodejs@~${NEXT_MINOR}.0"
+WASM_SRC=$(ls -d node_modules/.pnpm/@next+swc-wasm-nodejs@*/node_modules/@next/swc-wasm-nodejs)
+mkdir -p "${NEXT_DIR}/wasm/@next/swc-wasm-nodejs"
+cp -r "${WASM_SRC}"/* "${NEXT_DIR}/wasm/@next/swc-wasm-nodejs/"
+node /tmp/patch-swc.js "${NEXT_DIR}"
+WASM
+RUN chmod +x /usr/local/bin/setup-next-wasm.sh
+
+# seerr's next.config wires SVGR only for Turbopack. We build with --webpack
+# (no FreeBSD native bindings), which ignores that, so SVG imports fall back to
+# static images and crash SSR ("Element type is invalid"). Inject the equivalent
+# webpack SVGR rule so SVGs become React components like Turbopack produces.
+COPY <<'SVGR' /tmp/patch-svgr.js
+const fs = require('fs');
+const p = process.argv[2];
+let s = fs.readFileSync(p, 'utf8');
+const anchor = 'const nextConfig: NextConfig = {';
+if (!s.includes(anchor)) { console.error('SVGR patch: anchor not found in ' + p); process.exit(1); }
+const inject = `
+  webpack(config) {
+    const r = config.module.rules.find((x) => x.test && x.test.test && x.test.test('.svg'));
+    if (r) {
+      config.module.rules.push(
+        { ...r, test: /\\.svg$/i, resourceQuery: /url/ },
+        { test: /\\.svg$/i, issuer: r.issuer, resourceQuery: { not: [...((r.resourceQuery && r.resourceQuery.not) || []), /url/] }, use: ['@svgr/webpack'] }
+      );
+      r.exclude = /\\.svg$/i;
+    } else {
+      config.module.rules.push({ test: /\\.svg$/i, issuer: /\\.[jt]sx?$/, use: ['@svgr/webpack'] });
+    }
+    return config;
+  },`;
+fs.writeFileSync(p, s.replace(anchor, anchor + inject));
+console.log('SVGR webpack rule injected into ' + p);
+SVGR
+
+# --- Stage: production dependencies ---
+FROM base AS prod-deps
+RUN CYPRESS_INSTALL_BINARY=0 pnpm install --prod --frozen-lockfile --ignore-scripts && \
+    pnpm rebuild sqlite3 bcrypt && \
+    setup-next-wasm.sh && \
+    rm -rf $(pnpm store path)
+
+# --- Stage: build ---
+FROM base AS build
+
+RUN CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile
+
+# WASM SWC (no native binary on FreeBSD) — same setup used by prod-deps.
+RUN setup-next-wasm.sh
+
+# next build defaults to Turbopack (no FreeBSD native bindings) -> force webpack,
+# and add the SVGR webpack rule that the Turbopack-only config would otherwise skip.
+RUN node /tmp/patch-svgr.js next.config.ts && \
+    node_modules/.bin/next build --webpack && \
+    pnpm build:server && \
     rm -rf .next/cache $(pnpm store path)
 
 # --- Stage: production image ---

@@ -10,7 +10,6 @@ Source: dbuild templates
 
 Unified media request management (Plex, Jellyfin, Emby) on FreeBSD.
 
-
 | | |
 |---|---|
 | **Port** | 5055 |
@@ -122,8 +121,6 @@ podman run -d --name seerr \
     volumes:
       - "/path/to/containers/seerr:/config"
 ```
-
-Access at: `http://localhost:5055`
 
 ## Parameters
 
