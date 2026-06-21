@@ -34,16 +34,16 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   seerr:
-    image: ghcr.io/daemonless/seerr:latest
+    image: "ghcr.io/daemonless/seerr:latest"
     container_name: seerr
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000  # User ID for the application process
+      - PGID=1000  # Group ID for the application process
+      - TZ=UTC  # Timezone for the container
     volumes:
       - "/path/to/containers/seerr:/config"
     ports:
-      - 5055:5055
+      - "5055:5055"
     restart: unless-stopped
 ```
 
@@ -109,7 +109,7 @@ podman run -d --name seerr \
 - name: Deploy seerr
   containers.podman.podman_container:
     name: seerr
-    image: ghcr.io/daemonless/seerr:latest
+    image: "ghcr.io/daemonless/seerr:latest"
     state: started
     restart_policy: always
     env:
@@ -121,6 +121,8 @@ podman run -d --name seerr \
     volumes:
       - "/path/to/containers/seerr:/config"
 ```
+
+Access at: `http://localhost:5055`
 
 ## Parameters
 

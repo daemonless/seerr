@@ -1,7 +1,7 @@
 # Seerr - Unified media request management
 # Multi-stage build matching upstream pattern: prod-deps + build + runtime
 
-ARG BASE_VERSION=15
+ARG BASE_VERSION=15.1
 FROM ghcr.io/daemonless/base:${BASE_VERSION} AS base
 
 # Build dependencies (shared across stages)
