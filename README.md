@@ -69,6 +69,7 @@ services:
     name: seerr
     options:
       - container: 'boot args:--pull'
+      - expose="5055:5055 proto:tcp" \
     oci:
       user: root
       environment:
@@ -90,6 +91,7 @@ ARG tag=latest
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/seerr:${tag}
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -102,6 +104,23 @@ podman run -d --name seerr \
   -v /path/to/containers/seerr:/config \
   ghcr.io/daemonless/seerr:latest
 ```
+
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="5055:5055 proto:tcp" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
+  -o fstab="/path/to/containers/seerr /config <pseudofs>" \
+  ghcr.io/daemonless/seerr:latest seerr
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Ansible
 
