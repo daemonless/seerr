@@ -18,13 +18,11 @@ Unified media request management (Plex, Jellyfin, Emby) on FreeBSD.
 | **Website** | [https://seerr.io/](https://seerr.io/) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -48,10 +46,11 @@ services:
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=seerr
 PUID=1000
 PGID=1000
@@ -61,6 +60,8 @@ TZ=UTC
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -69,7 +70,7 @@ services:
     name: seerr
     options:
       - container: 'boot args:--pull'
-      - expose="5055:5055 proto:tcp" \
+      - expose: '5055:5055 proto:tcp' \
     oci:
       user: root
       environment:
@@ -86,6 +87,8 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force

@@ -6,7 +6,7 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION} AS base
 
 # Build dependencies (shared across stages)
 RUN pkg update && pkg install -y \
-    node22 npm-node22 python311 \
+    node22 npm-node22 python3 \
     gmake pkgconf sqlite3 vips \
     FreeBSD-clang FreeBSD-lld FreeBSD-toolchain FreeBSD-clibs-dev FreeBSD-runtime-dev \
     FreeBSD-zlib-dev FreeBSD-openssl-dev FreeBSD-xz-dev FreeBSD-bzip2-dev \
