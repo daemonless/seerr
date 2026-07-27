@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-16T09:09:55Z",
+  "generated": "2026-07-27T22:21:09Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.3.0",
       "arch": "amd64",
-      "generated": "2026-07-16T09:08:40Z",
+      "generated": "2026-07-27T22:19:43Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -75,6 +75,10 @@
           },
           {
             "name": "FreeBSD-libucl",
+            "version": "15.1"
+          },
+          {
+            "name": "FreeBSD-locales",
             "version": "15.1"
           },
           {
@@ -747,7 +751,7 @@
           },
           {
             "name": "nss",
-            "version": "3.125"
+            "version": "3.126"
           },
           {
             "name": "oniguruma",
@@ -819,7 +823,7 @@
           },
           {
             "name": "poppler",
-            "version": "26.04.0"
+            "version": "26.04.0_1"
           },
           {
             "name": "poppler-data",
@@ -827,7 +831,7 @@
           },
           {
             "name": "poppler-glib",
-            "version": "26.04.0"
+            "version": "26.04.0_1"
           },
           {
             "name": "py312-boost-libs",
@@ -1935,7 +1939,7 @@
           },
           {
             "name": "@next/swc-wasm-nodejs",
-            "version": "16.2.10"
+            "version": "16.2.12"
           },
           {
             "name": "@noble/hashes",
@@ -7079,7 +7083,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 234,
+        "freebsd": 235,
         "go": 0,
         "java": 0,
         "node": 1527,
@@ -7087,7 +7091,7 @@
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1764
+        "total": 1765
       }
     }
   }
