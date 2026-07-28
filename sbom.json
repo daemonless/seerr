@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-27T22:21:09Z",
+  "generated": "2026-07-28T07:27:34Z",
   "image": "seerr",
   "tags": {
     "latest": {
-      "app_version": "3.3.0",
+      "app_version": "3.4.0",
       "arch": "amd64",
-      "generated": "2026-07-27T22:19:43Z",
+      "generated": "2026-07-28T07:26:09Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -6191,7 +6191,7 @@
           },
           {
             "name": "seerr",
-            "version": "3.3.0"
+            "version": "3.4.0"
           },
           {
             "name": "selderee",
