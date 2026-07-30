@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-28T07:27:34Z",
+  "generated": "2026-07-30T17:58:17Z",
   "image": "seerr",
   "tags": {
     "latest": {
-      "app_version": "3.4.0",
+      "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-07-28T07:26:09Z",
+      "generated": "2026-07-30T17:56:57Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -31,7 +31,7 @@
           },
           {
             "name": "FreeBSD-clibs-lib32",
-            "version": "15.1p1"
+            "version": "15.1p2"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -6191,7 +6191,7 @@
           },
           {
             "name": "seerr",
-            "version": "3.4.0"
+            "version": "3.4.1"
           },
           {
             "name": "selderee",
