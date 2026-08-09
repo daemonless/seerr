@@ -70,7 +70,7 @@ services:
     name: seerr
     options:
       - container: 'boot args:--pull'
-      - expose: '5055:5055 proto:tcp' \
+      - expose: '5055:5055 proto:tcp'
     oci:
       user: root
       environment:
