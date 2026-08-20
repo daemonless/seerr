@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-09T09:57:56Z",
+  "generated": "2026-08-20T07:52:45Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-08-09T09:54:05Z",
+      "generated": "2026-08-20T07:48:41Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1342,7 +1342,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.126"
+            "version": "3.126.1"
           },
           {
             "licenses": [
@@ -1363,7 +1363,7 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.13_1"
+            "version": "3.4.14"
           },
           {
             "licenses": [
@@ -1514,7 +1514,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_3"
+            "version": "3.12.13_4"
           },
           {
             "licenses": [
