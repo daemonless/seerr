@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-20T07:52:45Z",
+  "generated": "2026-09-03T23:19:34Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-08-20T07:48:41Z",
+      "generated": "2026-09-03T23:16:55Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -161,7 +161,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -316,7 +316,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.125"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -943,7 +943,7 @@
               "LGPL3+"
             ],
             "name": "libidn",
-            "version": "1.43"
+            "version": "1.44"
           },
           {
             "licenses": [
@@ -1342,7 +1342,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.126.1"
+            "version": "3.127"
           },
           {
             "licenses": [
@@ -1363,7 +1363,7 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.14"
+            "version": "3.4.15"
           },
           {
             "licenses": [
@@ -1514,7 +1514,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.13_4"
+            "version": "3.12.14"
           },
           {
             "licenses": [
@@ -1557,7 +1557,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.6"
+            "version": "4.6.8"
           },
           {
             "licenses": [
