@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-14T16:39:34Z",
+  "generated": "2026-09-21T22:26:13Z",
   "image": "seerr",
   "tags": {
     "latest": {
       "app_version": "3.4.1",
       "arch": "amd64",
-      "generated": "2026-09-14T16:35:39Z",
+      "generated": "2026-09-21T22:14:30Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -63,6 +63,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-devmatch",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD-3-Clause"
+            ],
+            "name": "FreeBSD-dhclient",
             "version": "15.1"
           },
           {
@@ -182,6 +189,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-rc",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
           {
@@ -316,7 +330,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.127"
+            "version": "3.129"
           },
           {
             "licenses": [
@@ -360,7 +374,7 @@
               "MIT"
             ],
             "name": "curl",
-            "version": "8.21.0"
+            "version": "8.22.0"
           },
           {
             "licenses": [
@@ -1592,7 +1606,7 @@
               "LGPL21"
             ],
             "name": "srt",
-            "version": "1.5.5"
+            "version": "1.5.6"
           },
           {
             "licenses": [
@@ -9359,7 +9373,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 235,
+        "freebsd": 237,
         "go": 0,
         "java": 0,
         "node": 1527,
@@ -9367,7 +9381,7 @@
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1765
+        "total": 1767
       }
     }
   }
