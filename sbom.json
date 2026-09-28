@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-24T23:30:53Z",
+  "generated": "2026-09-28T07:17:50Z",
   "image": "seerr",
   "tags": {
     "latest-amd64": {
-      "app_version": "3.4.1",
+      "app_version": "3.5.0",
       "arch": "amd64",
-      "generated": "2026-09-24T23:27:24Z",
+      "generated": "2026-09-28T07:15:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -1356,7 +1356,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.129"
+            "version": "3.130"
           },
           {
             "licenses": [
@@ -2571,17 +2571,27 @@
           {
             "name": "@floating-ui/core",
             "purl": "",
-            "version": "1.7.3"
+            "version": "1.8.0"
           },
           {
             "name": "@floating-ui/dom",
             "purl": "",
-            "version": "1.7.4"
+            "version": "1.8.0"
+          },
+          {
+            "name": "@floating-ui/react",
+            "purl": "",
+            "version": "0.26.28"
+          },
+          {
+            "name": "@floating-ui/react-dom",
+            "purl": "",
+            "version": "2.1.9"
           },
           {
             "name": "@floating-ui/utils",
             "purl": "",
-            "version": "0.2.10"
+            "version": "0.2.12"
           },
           {
             "name": "@fontsource-variable/inter",
@@ -2651,7 +2661,7 @@
           {
             "name": "@headlessui/react",
             "purl": "",
-            "version": "1.7.19"
+            "version": "2.2.10"
           },
           {
             "name": "@heroicons/react",
@@ -3946,7 +3956,7 @@
           {
             "name": "ansis",
             "purl": "",
-            "version": "4.2.0"
+            "version": "4.3.1"
           },
           {
             "name": "any-promise",
@@ -4821,7 +4831,7 @@
           {
             "name": "dayjs",
             "purl": "",
-            "version": "1.11.20"
+            "version": "1.11.23"
           },
           {
             "name": "debug",
@@ -7264,11 +7274,6 @@
             "version": "7.1.1"
           },
           {
-            "name": "node-cache",
-            "purl": "",
-            "version": "5.1.2"
-          },
-          {
             "name": "node-exports-info",
             "purl": "",
             "version": "1.6.0"
@@ -7596,17 +7601,17 @@
           {
             "name": "pg",
             "purl": "",
-            "version": "8.20.0"
+            "version": "8.23.0"
           },
           {
             "name": "pg-cloudflare",
             "purl": "",
-            "version": "1.3.0"
+            "version": "1.4.0"
           },
           {
             "name": "pg-connection-string",
             "purl": "",
-            "version": "2.12.0"
+            "version": "2.14.0"
           },
           {
             "name": "pg-int8",
@@ -7616,12 +7621,12 @@
           {
             "name": "pg-pool",
             "purl": "",
-            "version": "3.13.0"
+            "version": "3.14.0"
           },
           {
             "name": "pg-protocol",
             "purl": "",
-            "version": "1.13.0"
+            "version": "1.16.0"
           },
           {
             "name": "pg-types",
@@ -8261,7 +8266,7 @@
           {
             "name": "seerr",
             "purl": "",
-            "version": "3.4.1"
+            "version": "3.5.0"
           },
           {
             "name": "selderee",
@@ -8654,6 +8659,11 @@
             "version": "5.31.5"
           },
           {
+            "name": "tabbable",
+            "purl": "",
+            "version": "6.5.0"
+          },
+          {
             "name": "tailwind-merge",
             "purl": "",
             "version": "2.6.1"
@@ -8926,7 +8936,7 @@
           {
             "name": "typeorm",
             "purl": "",
-            "version": "0.3.29"
+            "version": "0.3.31"
           },
           {
             "name": "typescript",
@@ -9376,12 +9386,12 @@
         "freebsd": 237,
         "go": 0,
         "java": 0,
-        "node": 1527,
+        "node": 1529,
         "php": 0,
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1767
+        "total": 1769
       }
     }
   }
