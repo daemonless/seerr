@@ -30,26 +30,160 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 
 ### Podman Compose
 
-```yaml
-services:
-  seerr:
-    image: "ghcr.io/daemonless/seerr:latest"
-    container_name: seerr
-    environment:
-      - PUID=1000  # User ID for the application process
-      - PGID=1000  # Group ID for the application process
-      - TZ=UTC  # Timezone for the container
-    volumes:
-      - "/path/to/containers/seerr:/config"
-    ports:
-      - "5055:5055"
-    # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
-    restart: always
+**Database.** Where the app keeps its data. The default needs nothing else running.
+
+#### SQLite (default)
+
+A file in the app's config folder. Right for one person, nothing extra to run.
+
+**1.** Save as `.env` and fill in what is empty:
+
+```env { data-zip-bundle="seerr-podman" data-zip-filename=".env" }
+
 ```
 
-Save as `compose.yaml`, then run `podman-compose up -d`.
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="seerr-podman" data-zip-filename="compose.yaml" }
+name: seerr
+
+services:
+  seerr:
+    image: ghcr.io/daemonless/seerr:latest
+    container_name: seerr
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - DB_TYPE=${DB_TYPE:-sqlite}
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_PASS=${DB_PASS:-}
+      - DB_NAME=${DB_NAME:-}
+
+    volumes:
+      - /path/to/containers/seerr:/config
+
+    ports:
+      - 5055:5055
+```
+
+Then run `podman-compose up -d`.
+
+#### PostgreSQL
+
+One more container, its data in its own folder. For a household, or an app that wants it.
+
+**1.** Save as `.env` and fill in what is empty:
+
+```env { data-zip-bundle="seerr-podman-database-postgres" data-zip-filename=".env" }
+# Database: PostgreSQL
+DB_TYPE=postgres
+DB_HOST=postgres
+DB_PORT=5432
+DB_USER=seerr
+DB_PASS=  # set one
+DB_NAME=seerr
+DATABASE_LOCATION=/containers/seerr/postgres
+```
+
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="seerr-podman-database-postgres" data-zip-filename="compose.yaml" }
+name: seerr
+
+services:
+  seerr:
+    depends_on: [postgres]
+    image: ghcr.io/daemonless/seerr:latest
+    container_name: seerr
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - DB_TYPE=${DB_TYPE:-sqlite}
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_PASS=${DB_PASS:-}
+      - DB_NAME=${DB_NAME:-}
+
+    volumes:
+      - /path/to/containers/seerr:/config
+
+    ports:
+      - 5055:5055
+  postgres:
+    image: ghcr.io/daemonless/postgres:17
+    restart: always
+    annotations:
+      org.freebsd.jail.allow.sysvipc: "true"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - "${DATABASE_LOCATION}:/var/lib/postgresql/data"
+```
+
+Then run `podman-compose up -d`.
+
+#### Your own
+
+A database you already run, here or on another machine. Nothing extra runs; you give the address and the account.
+
+**1.** Save as `.env` and fill in Kind, Host, Port, User, Password, Database:
+
+```env { data-zip-bundle="seerr-podman-database-external" data-zip-filename=".env" }
+# Database: Your own
+DB_TYPE=  # Kind: postgres
+DB_HOST=  # Host
+DB_PORT=  # Port
+DB_USER=  # User
+DB_PASS=  # Password
+DB_NAME=  # Database
+```
+
+**2.** Save as `compose.yaml`:
+
+```yaml { data-zip-bundle="seerr-podman-database-external" data-zip-filename="compose.yaml" }
+name: seerr
+
+services:
+  seerr:
+    image: ghcr.io/daemonless/seerr:latest
+    container_name: seerr
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - DB_TYPE=${DB_TYPE:-sqlite}
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_PASS=${DB_PASS:-}
+      - DB_NAME=${DB_NAME:-}
+
+    volumes:
+      - /path/to/containers/seerr:/config
+
+    ports:
+      - 5055:5055
+```
+
+Then run `podman-compose up -d`.
 
 ### AppJail Director
+
+#### SQLite (default)
+
 **.env**:
 
 ```
@@ -59,6 +193,12 @@ DIRECTOR_PROJECT=seerr
 PUID=1000
 PGID=1000
 TZ=UTC
+DB_TYPE=sqlite
+DB_HOST=
+DB_PORT=5432
+DB_USER=
+DB_PASS=<DB_PASS>
+DB_NAME=
 ```
 
 **appjail-director.yml**:
@@ -81,11 +221,17 @@ services:
         - PUID: !ENV '${PUID}'
         - PGID: !ENV '${PGID}'
         - TZ: !ENV '${TZ}'
+        - DB_TYPE: !ENV '${DB_TYPE}'
+        - DB_HOST: !ENV '${DB_HOST}'
+        - DB_PORT: !ENV '${DB_PORT}'
+        - DB_USER: !ENV '${DB_USER}'
+        - DB_PASS: !ENV '${DB_PASS}'
+        - DB_NAME: !ENV '${DB_NAME}'
     volumes:
       - seerr: /config
 volumes:
   seerr:
-    device: '/path/to/containers/seerr'
+    device: '/containers/seerr'
 ```
 
 **Makejail**:
@@ -102,102 +248,171 @@ OPTION from=ghcr.io/daemonless/seerr:${tag}
 
 Save the files above, then run `appjail-director up`.
 
+#### PostgreSQL
 
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
+**.env**:
 
-### Podman CLI
+```
+# .env
 
-```bash
-podman run -d --name seerr \
-  -p 5055:5055 \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -v /path/to/containers/seerr:/config \
-  ghcr.io/daemonless/seerr:latest
+DIRECTOR_PROJECT=seerr
+PUID=1000
+PGID=1000
+TZ=UTC
+DB_TYPE=postgres
+DB_HOST=seerr_postgres
+DB_PORT=5432
+DB_USER=seerr
+DB_PASS=
+DB_NAME=seerr
+DATABASE_LOCATION=/containers/seerr/postgres
 ```
 
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o expose="5055:5055 proto:tcp" \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=UTC \
-  -o fstab="/path/to/containers/seerr /config <pseudofs>" \
-  ghcr.io/daemonless/seerr:latest seerr
-```
-
-Save the files above, then run `sh run.sh`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
-### Bastille
-
-> [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
+**appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
+options:
+  - virtualnet: ':<random> default'
+  - nat:
 services:
   seerr:
     name: seerr
-    image: "ghcr.io/daemonless/seerr:latest"
-    network:
-      - mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+    options:
+      - container: 'args:--pull'
+      - expose: '5055:5055 proto:tcp'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+        - DB_TYPE: !ENV '${DB_TYPE}'
+        - DB_HOST: !ENV '${DB_HOST}'
+        - DB_PORT: !ENV '${DB_PORT}'
+        - DB_USER: !ENV '${DB_USER}'
+        - DB_PASS: !ENV '${DB_PASS}'
+        - DB_NAME: !ENV '${DB_NAME}'
     volumes:
-      - "/path/to/containers/seerr:/config"
+      - seerr: /config
+  seerr-postgres:
+    name: seerr_postgres
+    priority: 10
+    options:
+      - from: ghcr.io/daemonless/postgres:17
+      - template: !ENV '${PWD}/postgres-template.conf'
+    oci:
+      environment:
+        - POSTGRES_USER: !ENV '${DB_USER}'
+        - POSTGRES_PASSWORD: !ENV '${DB_PASS}'
+        - POSTGRES_DB: !ENV '${DB_NAME}'
+    volumes:
+      - database: /var/lib/postgresql/data
+volumes:
+  seerr:
+    device: '/containers/seerr'
+  database:
+    device: !ENV '${DATABASE_LOCATION}'
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
+**Makejail**:
 
-```bash
-bastille create -O \
-  --env PUID=1000 \
-  --env PGID=1000 \
-  --env TZ=UTC \
-  --volume /path/to/containers/seerr /config \
-  seerr ghcr.io/daemonless/seerr:latest inherit
+```
+# Makejail
+
+ARG tag=latest
+
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/seerr:${tag}
 ```
 
-### Ansible
+**postgres-template.conf**:
+
+```
+# The jail PostgreSQL runs in: SysV shared memory, which a jail does not
+# get by default. ip4/ip6 are set here because the director's ip4_inherit
+# option is a no-op in AppJail 5.5.0.
+
+exec.start: "/bin/sh /etc/rc"
+exec.stop: "/bin/sh /etc/rc.shutdown jail"
+sysvmsg: new
+sysvsem: new
+sysvshm: new
+mount.devfs
+persist
+ip4: inherit
+ip6: inherit
+```
+
+Save the files above, then run `appjail-director up`.
+
+#### Your own
+
+**.env**:
+
+```
+# .env
+
+DIRECTOR_PROJECT=seerr
+PUID=1000
+PGID=1000
+TZ=UTC
+DB_TYPE=
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASS=
+DB_NAME=
+```
+
+**appjail-director.yml**:
 
 ```yaml
-- name: Deploy seerr
-  containers.podman.podman_container:
+# appjail-director.yml
+
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  seerr:
     name: seerr
-    image: "ghcr.io/daemonless/seerr:latest"
-    state: started
-    restart_policy: always
-    env:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "UTC"
-    ports:
-      - "5055:5055"
+    options:
+      - container: 'args:--pull'
+      - expose: '5055:5055 proto:tcp'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+        - DB_TYPE: !ENV '${DB_TYPE}'
+        - DB_HOST: !ENV '${DB_HOST}'
+        - DB_PORT: !ENV '${DB_PORT}'
+        - DB_USER: !ENV '${DB_USER}'
+        - DB_PASS: !ENV '${DB_PASS}'
+        - DB_NAME: !ENV '${DB_NAME}'
     volumes:
-      - "/path/to/containers/seerr:/config"
+      - seerr: /config
+volumes:
+  seerr:
+    device: '/containers/seerr'
 ```
 
-Save as `seerr-deploy.yaml`, then run `ansible-playbook seerr-deploy.yaml`.
+**Makejail**:
+
+```
+# Makejail
+
+ARG tag=latest
+
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/seerr:${tag}
+```
+
+Save the files above, then run `appjail-director up`.
 
 Access at: `http://localhost:5055`
 
@@ -210,6 +425,12 @@ Access at: `http://localhost:5055`
 | `PUID` | `1000` | User ID for the application process |
 | `PGID` | `1000` | Group ID for the application process |
 | `TZ` | `UTC` | Timezone for the container |
+| `DB_TYPE` | `sqlite` | sqlite or postgres; set by the Database choice |
+| `DB_HOST` | `` | PostgreSQL host (Database choice) |
+| `DB_PORT` | `5432` | PostgreSQL port (Database choice) |
+| `DB_USER` | `` | PostgreSQL user (Database choice) |
+| `DB_PASS` | `<DB_PASS>` | PostgreSQL password (Database choice) |
+| `DB_NAME` | `` | PostgreSQL database name (Database choice) |
 
 ### Volumes
 
