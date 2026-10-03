@@ -11,11 +11,30 @@ x-daemonless:
   mlock: false
   appjail: true
 
+  choices:
+    database:
+      kind: database
+      offers: [sqlite, postgres, external]
+      default: sqlite
+      env:
+        type: DB_TYPE
+        host: DB_HOST
+        port: DB_PORT
+        user: DB_USER
+        password: DB_PASS
+        name: DB_NAME
+
   docs:
     env:
       PUID: "User ID for the application process"
       PGID: "Group ID for the application process"
       TZ: "Timezone for the container"
+      DB_TYPE: "sqlite or postgres; set by the Database choice"
+      DB_HOST: "PostgreSQL host (Database choice)"
+      DB_PORT: "PostgreSQL port (Database choice)"
+      DB_USER: "PostgreSQL user (Database choice)"
+      DB_PASS: "PostgreSQL password (Database choice)"
+      DB_NAME: "PostgreSQL database name (Database choice)"
     volumes:
       /config: "Configuration and database directory"
     ports:
@@ -31,6 +50,12 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
+      - DB_TYPE=${DB_TYPE:-sqlite}
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_PASS=${DB_PASS:-}
+      - DB_NAME=${DB_NAME:-}
 
     volumes:
       - /path/to/containers/seerr:/config
