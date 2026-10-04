@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-03T15:22:17Z",
+  "generated": "2026-10-04T23:06:45Z",
   "image": "seerr",
   "tags": {
     "latest-amd64": {
       "app_version": "3.5.0",
       "arch": "amd64",
-      "generated": "2026-10-03T15:19:32Z",
+      "generated": "2026-10-04T23:05:02Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -2854,46 +2854,6 @@
             "version": "7.1.3"
           },
           {
-            "name": "@jupyterlite/app",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-consoles",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-edit",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-lab",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-notebooks",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-repl",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/app-tree",
-            "purl": "",
-            "version": "0.5.1"
-          },
-          {
-            "name": "@jupyterlite/pyodide-kernel-extension",
-            "purl": "",
-            "version": "0.5.2"
-          },
-          {
             "name": "@ladjs/consolidate",
             "purl": "",
             "version": "1.0.4"
@@ -3862,11 +3822,6 @@
             "name": "@vercel/og",
             "purl": "",
             "version": "0.11.1"
-          },
-          {
-            "name": "MathJax-grunt-cleaner",
-            "purl": "",
-            "version": "0.1.0"
           },
           {
             "name": "abbrev",
@@ -6577,16 +6532,6 @@
             "name": "juice",
             "purl": "",
             "version": "11.1.1"
-          },
-          {
-            "name": "jupyterlab-jupytext",
-            "purl": "",
-            "version": "1.4.5"
-          },
-          {
-            "name": "jupyterlab_pygments",
-            "purl": "",
-            "version": "0.3.0"
           },
           {
             "name": "jwa",
@@ -9386,12 +9331,12 @@
         "freebsd": 237,
         "go": 0,
         "java": 0,
-        "node": 1529,
+        "node": 1518,
         "php": 0,
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1769
+        "total": 1758
       }
     }
   }
