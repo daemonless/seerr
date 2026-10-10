@@ -11,6 +11,10 @@ x-daemonless:
   mlock: false
   appjail: true
 
+  networking:
+    seerr: default
+    "*": private
+
   choices:
     database:
       kind: database
