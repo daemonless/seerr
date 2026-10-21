@@ -296,7 +296,7 @@ services:
         - DB_NAME: !ENV '${DB_NAME}'
     volumes:
       - seerr: /config
-  seerr-postgres:
+  postgres:
     name: seerr_postgres
     priority: 10
     options:
