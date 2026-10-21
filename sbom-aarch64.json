@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-11T08:32:22Z",
+  "generated": "2026-10-21T19:41:34Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
-      "app_version": "3.5.0",
+      "app_version": "3.5.1",
       "arch": "aarch64",
-      "generated": "2026-10-11T08:31:30Z",
+      "generated": "2026-10-21T19:40:40Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -196,7 +196,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -245,7 +245,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -417,7 +417,7 @@
               "GPLv2+"
             ],
             "name": "fftw3",
-            "version": "3.3.10_5"
+            "version": "3.3.11"
           },
           {
             "licenses": [
@@ -1357,7 +1357,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -8207,7 +8207,7 @@
           {
             "name": "seerr",
             "purl": "",
-            "version": "3.5.0"
+            "version": "3.5.1"
           },
           {
             "name": "selderee",
