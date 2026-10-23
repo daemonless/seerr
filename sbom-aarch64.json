@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T10:31:02Z",
+  "generated": "2026-10-23T11:53:14Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
       "app_version": "3.5.1",
       "arch": "aarch64",
-      "generated": "2026-10-23T10:30:05Z",
+      "generated": "2026-10-23T11:52:21Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
