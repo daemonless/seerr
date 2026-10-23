@@ -1,0 +1,11 @@
+#!/bin/sh
+# Start seerr; /init has already dropped to the run user.
+exec 2>&1
+
+export HOME=/config
+export NODE_ENV=production
+export CONFIG_DIRECTORY=/config
+export PORT=5055
+
+cd /app/seerr
+exec /usr/local/bin/node dist/index.js

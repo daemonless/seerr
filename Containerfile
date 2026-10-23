@@ -126,7 +126,7 @@ RUN node /tmp/patch-svgr.js next.config.ts && \
     rm -rf .next/cache $(pnpm store path)
 
 # --- Stage: production image ---
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node22 vips sqlite3"
@@ -183,7 +183,9 @@ RUN mkdir -p /config && chown bsd:bsd /config
 
 # Copy service files
 COPY root/ /
-RUN chmod +x /etc/services.d/*/run /etc/cont-init.d/* 2>/dev/null || true
+RUN chmod +x /daemonless/libexec/seerr /daemonless/init.d/*
+
+CMD ["/daemonless/libexec/seerr"]
 
 # --- Expose (Injected by Generator) ---
 EXPOSE 5055
