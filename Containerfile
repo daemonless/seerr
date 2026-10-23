@@ -8,7 +8,7 @@
 # Multi-stage build matching upstream pattern: prod-deps + build + runtime
 
 ARG BASE_VERSION=15.1
-FROM ghcr.io/daemonless/base:${BASE_VERSION} AS base
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION} AS base
 
 # Build dependencies (shared across stages)
 RUN pkg update && pkg install -y \
