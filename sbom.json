@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-21T18:43:36Z",
+  "generated": "2026-10-23T08:33:52Z",
   "image": "seerr",
   "tags": {
     "latest-amd64": {
       "app_version": "3.5.1",
       "arch": "amd64",
-      "generated": "2026-10-21T18:41:32Z",
+      "generated": "2026-10-23T08:28:16Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -367,7 +367,7 @@
               "CUPS"
             ],
             "name": "cups",
-            "version": "2.4.19_2"
+            "version": "2.4.20"
           },
           {
             "licenses": [
@@ -396,13 +396,6 @@
             ],
             "name": "dbus-glib",
             "version": "0.116"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -672,7 +665,7 @@
               "MIT"
             ],
             "name": "libX11",
-            "version": "1.8.13_1,1"
+            "version": "1.8.14,1"
           },
           {
             "licenses": [
@@ -735,7 +728,7 @@
               "MIT"
             ],
             "name": "libXi",
-            "version": "1.8.3,1"
+            "version": "1.8.4,1"
           },
           {
             "licenses": [
@@ -749,7 +742,7 @@
               "MIT"
             ],
             "name": "libXrender",
-            "version": "0.9.12"
+            "version": "0.9.13"
           },
           {
             "licenses": [
@@ -1246,7 +1239,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
@@ -1547,13 +1540,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "ZLIB"
             ],
             "name": "sdl2",
@@ -1579,14 +1565,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -9336,7 +9315,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 238,
+        "freebsd": 235,
         "go": 0,
         "java": 0,
         "node": 1518,
@@ -9344,7 +9323,7 @@
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1759
+        "total": 1756
       }
     }
   }
