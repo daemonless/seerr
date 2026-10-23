@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-21T19:41:34Z",
+  "generated": "2026-10-23T10:31:02Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
       "app_version": "3.5.1",
       "arch": "aarch64",
-      "generated": "2026-10-21T19:40:40Z",
+      "generated": "2026-10-23T10:30:05Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -323,7 +323,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -360,7 +360,7 @@
               "CUPS"
             ],
             "name": "cups",
-            "version": "2.4.19_2"
+            "version": "2.4.20"
           },
           {
             "licenses": [
@@ -389,13 +389,6 @@
             ],
             "name": "dbus-glib",
             "version": "0.116"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -1239,7 +1232,7 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
@@ -1529,7 +1522,7 @@
               "PSFL"
             ],
             "name": "python312",
-            "version": "3.12.14_1"
+            "version": "3.12.15"
           },
           {
             "licenses": [
@@ -1537,13 +1530,6 @@
             ],
             "name": "readline",
             "version": "8.3.6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
           },
           {
             "licenses": [
@@ -1572,14 +1558,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -9324,7 +9303,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 237,
+        "freebsd": 234,
         "go": 0,
         "java": 0,
         "node": 1517,
@@ -9332,7 +9311,7 @@
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1757
+        "total": 1754
       }
     }
   }
