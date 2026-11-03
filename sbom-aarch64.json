@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-23T11:53:14Z",
+  "generated": "2026-11-03T12:48:32Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
       "app_version": "3.5.1",
       "arch": "aarch64",
-      "generated": "2026-10-23T11:52:21Z",
+      "generated": "2026-11-03T12:47:28Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -196,7 +196,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p5"
+            "version": "15.1p6"
           },
           {
             "licenses": [
@@ -259,7 +259,7 @@
               "APACHE20"
             ],
             "name": "ImageMagick7",
-            "version": "7.1.2.25_2"
+            "version": "7.1.2.34"
           },
           {
             "licenses": [
@@ -273,7 +273,7 @@
               "BSD2CLAUSE"
             ],
             "name": "aom",
-            "version": "3.15.1"
+            "version": "3.15.2"
           },
           {
             "licenses": [
@@ -309,7 +309,7 @@
               "MIT"
             ],
             "name": "brotli",
-            "version": "1.2.0,1"
+            "version": "1.2.1,1"
           },
           {
             "licenses": [
@@ -367,7 +367,7 @@
               "MIT"
             ],
             "name": "curl",
-            "version": "8.22.0"
+            "version": "8.23.0"
           },
           {
             "licenses": [
@@ -505,7 +505,7 @@
               "GPLv3"
             ],
             "name": "gnupg",
-            "version": "2.5.21"
+            "version": "2.5.24"
           },
           {
             "licenses": [
@@ -658,7 +658,7 @@
               "MIT"
             ],
             "name": "libX11",
-            "version": "1.8.13_1,1"
+            "version": "1.8.14,1"
           },
           {
             "licenses": [
@@ -721,7 +721,7 @@
               "MIT"
             ],
             "name": "libXi",
-            "version": "1.8.3,1"
+            "version": "1.8.4,1"
           },
           {
             "licenses": [
@@ -735,7 +735,7 @@
               "MIT"
             ],
             "name": "libXrender",
-            "version": "0.9.12"
+            "version": "0.9.13"
           },
           {
             "licenses": [
@@ -928,7 +928,7 @@
               "LGPL3+"
             ],
             "name": "libheif",
-            "version": "1.22.2_3"
+            "version": "1.23.6"
           },
           {
             "licenses": [
@@ -1329,7 +1329,7 @@
               "MIT"
             ],
             "name": "node22",
-            "version": "22.23.2_1"
+            "version": "22.23.4"
           },
           {
             "licenses": [
@@ -1350,7 +1350,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
@@ -1623,7 +1623,7 @@
               "LGPL21"
             ],
             "name": "vips",
-            "version": "8.18.6"
+            "version": "8.18.6_1"
           },
           {
             "licenses": [
