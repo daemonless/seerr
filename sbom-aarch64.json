@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-03T12:48:32Z",
+  "generated": "2026-11-04T19:18:23Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
       "app_version": "3.5.1",
       "arch": "aarch64",
-      "generated": "2026-11-03T12:47:28Z",
+      "generated": "2026-11-04T19:17:20Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -323,7 +323,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.131"
+            "version": "3.132"
           },
           {
             "licenses": [
