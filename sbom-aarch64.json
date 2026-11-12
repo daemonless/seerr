@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-04T19:18:23Z",
+  "generated": "2026-11-12T23:46:53Z",
   "image": "seerr",
   "tags": {
     "latest-aarch64": {
-      "app_version": "3.5.1",
+      "app_version": "3.5.2",
       "arch": "aarch64",
-      "generated": "2026-11-04T19:17:20Z",
+      "generated": "2026-11-12T23:45:38Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -273,7 +273,7 @@
               "BSD2CLAUSE"
             ],
             "name": "aom",
-            "version": "3.15.2"
+            "version": "3.15.3"
           },
           {
             "licenses": [
@@ -395,7 +395,7 @@
               "MIT"
             ],
             "name": "expat",
-            "version": "2.8.4"
+            "version": "2.9.0"
           },
           {
             "licenses": [
@@ -1350,7 +1350,7 @@
               "MPL20"
             ],
             "name": "nss",
-            "version": "3.132"
+            "version": "3.133"
           },
           {
             "licenses": [
@@ -1371,7 +1371,7 @@
               "BSD3CLAUSE"
             ],
             "name": "openexr",
-            "version": "3.4.16"
+            "version": "3.4.17"
           },
           {
             "licenses": [
@@ -1579,7 +1579,7 @@
               "PD"
             ],
             "name": "sqlite3",
-            "version": "3.53.4,1"
+            "version": "3.54.1,1"
           },
           {
             "licenses": [
@@ -1716,7 +1716,7 @@
           {
             "name": "@babel/core",
             "purl": "",
-            "version": "7.29.0"
+            "version": "7.29.7"
           },
           {
             "name": "@babel/generator",
@@ -1764,11 +1764,6 @@
             "version": "7.28.0"
           },
           {
-            "name": "@babel/helper-hoist-variables",
-            "purl": "",
-            "version": "7.24.7"
-          },
-          {
             "name": "@babel/helper-member-expression-to-functions",
             "purl": "",
             "version": "7.28.5"
@@ -1781,7 +1776,7 @@
           {
             "name": "@babel/helper-module-transforms",
             "purl": "",
-            "version": "7.28.6"
+            "version": "7.29.7"
           },
           {
             "name": "@babel/helper-optimise-call-expression",
@@ -1831,12 +1826,12 @@
           {
             "name": "@babel/helpers",
             "purl": "",
-            "version": "7.29.2"
+            "version": "7.29.10"
           },
           {
             "name": "@babel/parser",
             "purl": "",
-            "version": "7.29.2"
+            "version": "7.29.11"
           },
           {
             "name": "@babel/plugin-bugfix-firefox-class-in-computed-class-key",
@@ -1867,11 +1862,6 @@
             "name": "@babel/plugin-syntax-async-generators",
             "purl": "",
             "version": "7.8.4"
-          },
-          {
-            "name": "@babel/plugin-syntax-bigint",
-            "purl": "",
-            "version": "7.8.3"
           },
           {
             "name": "@babel/plugin-syntax-class-properties",
@@ -2086,7 +2076,7 @@
           {
             "name": "@babel/plugin-transform-modules-systemjs",
             "purl": "",
-            "version": "7.24.7"
+            "version": "7.29.8"
           },
           {
             "name": "@babel/plugin-transform-modules-umd",
@@ -2279,11 +2269,6 @@
             "version": "7.29.0"
           },
           {
-            "name": "@bcoe/v8-coverage",
-            "purl": "",
-            "version": "0.2.3"
-          },
-          {
             "name": "@colors/colors",
             "purl": "",
             "version": "1.6.0"
@@ -2389,11 +2374,6 @@
             "version": "0.0.0-development"
           },
           {
-            "name": "@cypress/angular-zoneless",
-            "purl": "",
-            "version": "0.0.0-development"
-          },
-          {
             "name": "@cypress/mount-utils",
             "purl": "",
             "version": "0.0.0-development"
@@ -2406,7 +2386,7 @@
           {
             "name": "@cypress/request",
             "purl": "",
-            "version": "3.0.10"
+            "version": "4.0.1"
           },
           {
             "name": "@cypress/svelte",
@@ -2447,6 +2427,11 @@
             "name": "@edge-runtime/primitives",
             "purl": "",
             "version": "6.0.0"
+          },
+          {
+            "name": "@emnapi/runtime",
+            "purl": "",
+            "version": "1.11.3"
           },
           {
             "name": "@emotion/babel-plugin",
@@ -2634,11 +2619,6 @@
             "version": "1.0.3"
           },
           {
-            "name": "@gar/promisify",
-            "purl": "",
-            "version": "1.1.3"
-          },
-          {
             "name": "@headlessui/react",
             "purl": "",
             "version": "2.2.10"
@@ -2651,12 +2631,17 @@
           {
             "name": "@humanfs/core",
             "purl": "",
-            "version": "0.19.1"
+            "version": "0.19.2"
           },
           {
             "name": "@humanfs/node",
             "purl": "",
-            "version": "0.16.7"
+            "version": "0.16.8"
+          },
+          {
+            "name": "@humanfs/types",
+            "purl": "",
+            "version": "0.15.0"
           },
           {
             "name": "@humanwhocodes/module-importer",
@@ -2672,6 +2657,21 @@
             "name": "@img/colour",
             "purl": "",
             "version": "1.1.0"
+          },
+          {
+            "name": "@img/sharp-freebsd-wasm32",
+            "purl": "",
+            "version": "0.35.5"
+          },
+          {
+            "name": "@img/sharp-wasm32",
+            "purl": "",
+            "version": "0.35.5"
+          },
+          {
+            "name": "@inquirer/external-editor",
+            "purl": "",
+            "version": "1.0.3"
           },
           {
             "name": "@internationalized/date",
@@ -2702,106 +2702,6 @@
             "name": "@isaacs/fs-minipass",
             "purl": "",
             "version": "4.0.1"
-          },
-          {
-            "name": "@istanbuljs/load-nyc-config",
-            "purl": "",
-            "version": "1.1.0"
-          },
-          {
-            "name": "@istanbuljs/schema",
-            "purl": "",
-            "version": "0.1.6"
-          },
-          {
-            "name": "@jest/console",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/core",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/diff-sequences",
-            "purl": "",
-            "version": "30.0.1"
-          },
-          {
-            "name": "@jest/environment",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/expect",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/expect-utils",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/fake-timers",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/get-type",
-            "purl": "",
-            "version": "30.1.0"
-          },
-          {
-            "name": "@jest/globals",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/pattern",
-            "purl": "",
-            "version": "30.0.1"
-          },
-          {
-            "name": "@jest/reporters",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/schemas",
-            "purl": "",
-            "version": "30.0.5"
-          },
-          {
-            "name": "@jest/snapshot-utils",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/source-map",
-            "purl": "",
-            "version": "30.0.1"
-          },
-          {
-            "name": "@jest/test-result",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/test-sequencer",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/transform",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "@jest/types",
-            "purl": "",
-            "version": "30.2.0"
           },
           {
             "name": "@jridgewell/gen-mapping",
@@ -2851,27 +2751,27 @@
           {
             "name": "@messageformat/core",
             "purl": "",
-            "version": "3.4.0"
+            "version": "3.4.1"
           },
           {
             "name": "@messageformat/date-skeleton",
             "purl": "",
-            "version": "1.1.0"
+            "version": "2.0.0-0"
           },
           {
             "name": "@messageformat/number-skeleton",
             "purl": "",
-            "version": "1.2.0"
+            "version": "2.0.0-0"
           },
           {
             "name": "@messageformat/parser",
             "purl": "",
-            "version": "5.1.1"
+            "version": "5.2.0"
           },
           {
             "name": "@messageformat/runtime",
             "purl": "",
-            "version": "3.0.2"
+            "version": "3.0.3"
           },
           {
             "name": "@my-scope/package-a",
@@ -2886,17 +2786,17 @@
           {
             "name": "@next/env",
             "purl": "",
-            "version": "16.2.6"
+            "version": "16.4.2"
           },
           {
             "name": "@next/eslint-plugin-next",
             "purl": "",
-            "version": "16.2.6"
+            "version": "16.4.2"
           },
           {
             "name": "@next/swc-wasm-nodejs",
             "purl": "",
-            "version": "16.2.12"
+            "version": "16.4.6"
           },
           {
             "name": "@noble/hashes",
@@ -2931,12 +2831,7 @@
           {
             "name": "@npmcli/fs",
             "purl": "",
-            "version": "1.1.1"
-          },
-          {
-            "name": "@npmcli/move-file",
-            "purl": "",
-            "version": "1.1.2"
+            "version": "5.0.0"
           },
           {
             "name": "@npmcli/redact",
@@ -3224,21 +3119,6 @@
             "version": "1.2.0"
           },
           {
-            "name": "@sinclair/typebox",
-            "purl": "",
-            "version": "0.34.49"
-          },
-          {
-            "name": "@sinonjs/commons",
-            "purl": "",
-            "version": "3.0.1"
-          },
-          {
-            "name": "@sinonjs/fake-timers",
-            "purl": "",
-            "version": "13.0.5"
-          },
-          {
             "name": "@so-ric/colorspace",
             "purl": "",
             "version": "1.1.6"
@@ -3336,12 +3216,12 @@
           {
             "name": "@swc/helpers",
             "purl": "",
-            "version": "0.5.15"
+            "version": "0.5.23"
           },
           {
             "name": "@swc/types",
             "purl": "",
-            "version": "0.1.26"
+            "version": "0.1.28"
           },
           {
             "name": "@tailwindcss/aspect-ratio",
@@ -3374,11 +3254,6 @@
             "version": "3.14.0"
           },
           {
-            "name": "@tootallnate/once",
-            "purl": "",
-            "version": "1.1.2"
-          },
-          {
             "name": "@tsconfig/node10",
             "purl": "",
             "version": "1.0.11"
@@ -3397,26 +3272,6 @@
             "name": "@tsconfig/node16",
             "purl": "",
             "version": "1.0.4"
-          },
-          {
-            "name": "@types/babel__core",
-            "purl": "",
-            "version": "7.20.5"
-          },
-          {
-            "name": "@types/babel__generator",
-            "purl": "",
-            "version": "7.27.0"
-          },
-          {
-            "name": "@types/babel__template",
-            "purl": "",
-            "version": "7.4.4"
-          },
-          {
-            "name": "@types/babel__traverse",
-            "purl": "",
-            "version": "7.28.0"
           },
           {
             "name": "@types/bcrypt",
@@ -3519,21 +3374,6 @@
             "version": "3.27.4"
           },
           {
-            "name": "@types/istanbul-lib-coverage",
-            "purl": "",
-            "version": "2.0.6"
-          },
-          {
-            "name": "@types/istanbul-lib-report",
-            "purl": "",
-            "version": "3.0.3"
-          },
-          {
-            "name": "@types/istanbul-reports",
-            "purl": "",
-            "version": "3.0.4"
-          },
-          {
             "name": "@types/js-yaml",
             "purl": "",
             "version": "4.0.9"
@@ -3606,7 +3446,7 @@
           {
             "name": "@types/picomatch",
             "purl": "",
-            "version": "4.0.2"
+            "version": "4.0.3"
           },
           {
             "name": "@types/qs",
@@ -3657,11 +3497,6 @@
             "name": "@types/sizzle",
             "purl": "",
             "version": "2.3.10"
-          },
-          {
-            "name": "@types/stack-utils",
-            "purl": "",
-            "version": "2.0.3"
           },
           {
             "name": "@types/superagent",
@@ -3717,21 +3552,6 @@
             "name": "@types/xml2js",
             "purl": "",
             "version": "0.4.14"
-          },
-          {
-            "name": "@types/yargs",
-            "purl": "",
-            "version": "17.0.35"
-          },
-          {
-            "name": "@types/yargs-parser",
-            "purl": "",
-            "version": "21.0.3"
-          },
-          {
-            "name": "@types/yauzl",
-            "purl": "",
-            "version": "2.10.3"
           },
           {
             "name": "@typescript-eslint/eslint-plugin",
@@ -3791,17 +3611,22 @@
           {
             "name": "@unicode/unicode-17.0.0",
             "purl": "",
-            "version": "1.6.16"
+            "version": "1.6.17"
           },
           {
             "name": "@vercel/og",
             "purl": "",
-            "version": "0.11.1"
+            "version": "1.0.1"
+          },
+          {
+            "name": "@zone-eu/mailsplit",
+            "purl": "",
+            "version": "5.4.16"
           },
           {
             "name": "abbrev",
             "purl": "",
-            "version": "1.1.1"
+            "version": "4.0.0"
           },
           {
             "name": "accepts",
@@ -3834,16 +3659,6 @@
             "version": "6.0.2"
           },
           {
-            "name": "agentkeepalive",
-            "purl": "",
-            "version": "4.6.0"
-          },
-          {
-            "name": "aggregate-error",
-            "purl": "",
-            "version": "3.1.0"
-          },
-          {
             "name": "ajv",
             "purl": "",
             "version": "6.14.0"
@@ -3857,11 +3672,6 @@
             "name": "ajv-formats",
             "purl": "",
             "version": "3.0.1"
-          },
-          {
-            "name": "alce",
-            "purl": "",
-            "version": "1.2.0"
           },
           {
             "name": "ansi-colors",
@@ -3909,19 +3719,9 @@
             "version": "1.0.0"
           },
           {
-            "name": "aproba",
-            "purl": "",
-            "version": "2.0.0"
-          },
-          {
             "name": "arch",
             "purl": "",
-            "version": "2.2.0"
-          },
-          {
-            "name": "are-we-there-yet",
-            "purl": "",
-            "version": "3.0.1"
+            "version": "3.0.0"
           },
           {
             "name": "arg",
@@ -3931,7 +3731,7 @@
           {
             "name": "argparse",
             "purl": "",
-            "version": "1.0.10"
+            "version": "2.0.1"
           },
           {
             "name": "aria-hidden",
@@ -4034,11 +3834,6 @@
             "version": "0.0.8"
           },
           {
-            "name": "astral-regex",
-            "purl": "",
-            "version": "2.0.0"
-          },
-          {
             "name": "async",
             "purl": "",
             "version": "3.2.6"
@@ -4081,7 +3876,7 @@
           {
             "name": "axios",
             "purl": "",
-            "version": "1.15.0"
+            "version": "1.21.0"
           },
           {
             "name": "axios-rate-limit",
@@ -4092,21 +3887,6 @@
             "name": "axobject-query",
             "purl": "",
             "version": "4.1.0"
-          },
-          {
-            "name": "babel-jest",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "babel-plugin-istanbul",
-            "purl": "",
-            "version": "7.0.1"
-          },
-          {
-            "name": "babel-plugin-jest-hoist",
-            "purl": "",
-            "version": "30.2.0"
           },
           {
             "name": "babel-plugin-macros",
@@ -4127,16 +3907,6 @@
             "name": "babel-plugin-polyfill-regenerator",
             "purl": "",
             "version": "0.6.6"
-          },
-          {
-            "name": "babel-preset-current-node-syntax",
-            "purl": "",
-            "version": "1.2.0"
-          },
-          {
-            "name": "babel-preset-jest",
-            "purl": "",
-            "version": "30.2.0"
           },
           {
             "name": "babel-walk",
@@ -4161,7 +3931,7 @@
           {
             "name": "baseline-browser-mapping",
             "purl": "",
-            "version": "2.10.23"
+            "version": "2.11.34"
           },
           {
             "name": "bcrypt",
@@ -4216,12 +3986,12 @@
           {
             "name": "bn.js",
             "purl": "",
-            "version": "4.12.2"
+            "version": "4.12.5"
           },
           {
             "name": "body-parser",
             "purl": "",
-            "version": "2.2.2"
+            "version": "2.4.0"
           },
           {
             "name": "boolbase",
@@ -4236,7 +4006,7 @@
           {
             "name": "brace-expansion",
             "purl": "",
-            "version": "1.1.12"
+            "version": "1.1.21"
           },
           {
             "name": "braces",
@@ -4246,17 +4016,7 @@
           {
             "name": "browserslist",
             "purl": "",
-            "version": "4.28.2"
-          },
-          {
-            "name": "bs-logger",
-            "purl": "",
-            "version": "0.2.6"
-          },
-          {
-            "name": "bser",
-            "purl": "",
-            "version": "2.1.1"
+            "version": "4.29.5"
           },
           {
             "name": "buffer",
@@ -4264,19 +4024,14 @@
             "version": "5.7.1"
           },
           {
-            "name": "buffer-crc32",
-            "purl": "",
-            "version": "0.2.13"
-          },
-          {
             "name": "buffer-equal-constant-time",
             "purl": "",
             "version": "1.0.1"
           },
           {
-            "name": "buffer-from",
+            "name": "bundle-name",
             "purl": "",
-            "version": "1.1.2"
+            "version": "4.1.1"
           },
           {
             "name": "busboy",
@@ -4291,12 +4046,12 @@
           {
             "name": "cacache",
             "purl": "",
-            "version": "15.3.0"
+            "version": "20.0.4"
           },
           {
             "name": "cachedir",
             "purl": "",
-            "version": "2.3.0"
+            "version": "2.4.0"
           },
           {
             "name": "call-bind",
@@ -4321,7 +4076,7 @@
           {
             "name": "camelcase",
             "purl": "",
-            "version": "5.3.1"
+            "version": "6.3.0"
           },
           {
             "name": "camelcase-css",
@@ -4347,11 +4102,6 @@
             "name": "chalk",
             "purl": "",
             "version": "2.4.2"
-          },
-          {
-            "name": "char-regex",
-            "purl": "",
-            "version": "1.0.2"
           },
           {
             "name": "character-entities",
@@ -4381,7 +4131,7 @@
           {
             "name": "chardet",
             "purl": "",
-            "version": "0.7.0"
+            "version": "2.2.0"
           },
           {
             "name": "cheerio",
@@ -4404,19 +4154,14 @@
             "version": "1.1.4"
           },
           {
+            "name": "chrome-remote-interface",
+            "purl": "",
+            "version": "0.33.3"
+          },
+          {
             "name": "ci-info",
             "purl": "",
-            "version": "3.9.0"
-          },
-          {
-            "name": "cjs-module-lexer",
-            "purl": "",
-            "version": "2.2.0"
-          },
-          {
-            "name": "clean-stack",
-            "purl": "",
-            "version": "2.2.0"
+            "version": "4.4.0"
           },
           {
             "name": "cli-cursor",
@@ -4436,7 +4181,7 @@
           {
             "name": "cli-truncate",
             "purl": "",
-            "version": "2.1.0"
+            "version": "5.2.0"
           },
           {
             "name": "cli-width",
@@ -4464,16 +4209,6 @@
             "version": "2.1.1"
           },
           {
-            "name": "co",
-            "purl": "",
-            "version": "4.6.0"
-          },
-          {
-            "name": "collect-v8-coverage",
-            "purl": "",
-            "version": "1.0.3"
-          },
-          {
             "name": "color",
             "purl": "",
             "version": "5.0.3"
@@ -4492,11 +4227,6 @@
             "name": "color-string",
             "purl": "",
             "version": "2.1.4"
-          },
-          {
-            "name": "color-support",
-            "purl": "",
-            "version": "1.1.3"
           },
           {
             "name": "colorette",
@@ -4526,7 +4256,7 @@
           {
             "name": "commitizen",
             "purl": "",
-            "version": "4.3.1"
+            "version": "4.3.2"
           },
           {
             "name": "common-tags",
@@ -4554,19 +4284,9 @@
             "version": "0.0.1"
           },
           {
-            "name": "concat-stream",
-            "purl": "",
-            "version": "2.0.0"
-          },
-          {
             "name": "connect-typeorm",
             "purl": "",
             "version": "2.0.0"
-          },
-          {
-            "name": "console-control-strings",
-            "purl": "",
-            "version": "1.1.0"
           },
           {
             "name": "constantinople",
@@ -4686,7 +4406,7 @@
           {
             "name": "cross-spawn",
             "purl": "",
-            "version": "6.0.6"
+            "version": "7.0.6"
           },
           {
             "name": "css-select",
@@ -4726,7 +4446,7 @@
           {
             "name": "cypress",
             "purl": "",
-            "version": "15.13.1"
+            "version": "16.2.0"
           },
           {
             "name": "cz-conventional-changelog",
@@ -4804,6 +4524,21 @@
             "version": "2.2.1"
           },
           {
+            "name": "deepmerge-ts",
+            "purl": "",
+            "version": "8.0.2"
+          },
+          {
+            "name": "default-browser",
+            "purl": "",
+            "version": "5.5.1"
+          },
+          {
+            "name": "default-browser-id",
+            "purl": "",
+            "version": "5.0.1"
+          },
+          {
             "name": "defaults",
             "purl": "",
             "version": "1.0.4"
@@ -4814,17 +4549,17 @@
             "version": "1.1.4"
           },
           {
+            "name": "define-lazy-prop",
+            "purl": "",
+            "version": "3.0.0"
+          },
+          {
             "name": "define-properties",
             "purl": "",
             "version": "1.2.1"
           },
           {
             "name": "delayed-stream",
-            "purl": "",
-            "version": "1.0.0"
-          },
-          {
-            "name": "delegates",
             "purl": "",
             "version": "1.0.0"
           },
@@ -4859,11 +4594,6 @@
             "version": "2.1.2"
           },
           {
-            "name": "detect-newline",
-            "purl": "",
-            "version": "3.1.0"
-          },
-          {
             "name": "devlop",
             "purl": "",
             "version": "1.1.0"
@@ -4896,7 +4626,7 @@
           {
             "name": "display-notification",
             "purl": "",
-            "version": "2.0.0"
+            "version": "3.0.0"
           },
           {
             "name": "dlv",
@@ -4991,17 +4721,12 @@
           {
             "name": "electron-to-chromium",
             "purl": "",
-            "version": "1.5.344"
+            "version": "1.5.467"
           },
           {
             "name": "email-templates",
             "purl": "",
             "version": "13.0.1"
-          },
-          {
-            "name": "emittery",
-            "purl": "",
-            "version": "0.13.1"
           },
           {
             "name": "emoji-regex",
@@ -5026,7 +4751,7 @@
           {
             "name": "encoding-japanese",
             "purl": "",
-            "version": "2.2.0"
+            "version": "2.3.0"
           },
           {
             "name": "encoding-sniffer",
@@ -5037,11 +4762,6 @@
             "name": "end-of-stream",
             "purl": "",
             "version": "1.4.5"
-          },
-          {
-            "name": "enquirer",
-            "purl": "",
-            "version": "2.4.1"
           },
           {
             "name": "entities",
@@ -5057,11 +4777,6 @@
             "name": "environment",
             "purl": "",
             "version": "1.1.0"
-          },
-          {
-            "name": "err-code",
-            "purl": "",
-            "version": "2.0.3"
           },
           {
             "name": "error-ex",
@@ -5126,7 +4841,7 @@
           {
             "name": "escape-string-applescript",
             "purl": "",
-            "version": "1.0.0"
+            "version": "3.0.0"
           },
           {
             "name": "escape-string-regexp",
@@ -5141,7 +4856,7 @@
           {
             "name": "eslint-config-next",
             "purl": "",
-            "version": "16.2.6"
+            "version": "16.4.2"
           },
           {
             "name": "eslint-config-prettier",
@@ -5214,11 +4929,6 @@
             "version": "10.4.0"
           },
           {
-            "name": "esprima",
-            "purl": "",
-            "version": "1.2.5"
-          },
-          {
             "name": "esquery",
             "purl": "",
             "version": "1.7.0"
@@ -5231,7 +4941,7 @@
           {
             "name": "estraverse",
             "purl": "",
-            "version": "1.9.3"
+            "version": "5.3.0"
           },
           {
             "name": "estree-util-is-identifier-name",
@@ -5261,17 +4971,12 @@
           {
             "name": "execa",
             "purl": "",
-            "version": "0.10.0"
+            "version": "4.1.0"
           },
           {
             "name": "executable",
             "purl": "",
             "version": "4.1.1"
-          },
-          {
-            "name": "exit-x",
-            "purl": "",
-            "version": "0.2.2"
           },
           {
             "name": "expand-template",
@@ -5282,11 +4987,6 @@
             "name": "expand-tilde",
             "purl": "",
             "version": "2.0.2"
-          },
-          {
-            "name": "expect",
-            "purl": "",
-            "version": "30.2.0"
           },
           {
             "name": "exponential-backoff",
@@ -5306,7 +5006,7 @@
           {
             "name": "express-rate-limit",
             "purl": "",
-            "version": "8.3.2"
+            "version": "8.7.1"
           },
           {
             "name": "express-session",
@@ -5317,21 +5017,6 @@
             "name": "extend",
             "purl": "",
             "version": "3.0.2"
-          },
-          {
-            "name": "extend-object",
-            "purl": "",
-            "version": "1.0.0"
-          },
-          {
-            "name": "external-editor",
-            "purl": "",
-            "version": "3.1.0"
-          },
-          {
-            "name": "extract-zip",
-            "purl": "",
-            "version": "2.0.1"
           },
           {
             "name": "extsprintf",
@@ -5376,22 +5061,12 @@
           {
             "name": "fast-uri",
             "purl": "",
-            "version": "3.1.0"
+            "version": "3.1.9"
           },
           {
             "name": "fastq",
             "purl": "",
             "version": "1.17.1"
-          },
-          {
-            "name": "fb-watchman",
-            "purl": "",
-            "version": "2.0.2"
-          },
-          {
-            "name": "fd-slicer",
-            "purl": "",
-            "version": "1.1.0"
           },
           {
             "name": "fdir",
@@ -5446,15 +5121,10 @@
           {
             "name": "find-up",
             "purl": "",
-            "version": "4.1.0"
+            "version": "5.0.0"
           },
           {
             "name": "findup-sync",
-            "purl": "",
-            "version": "4.0.0"
-          },
-          {
-            "name": "fixpack",
             "purl": "",
             "version": "4.0.0"
           },
@@ -5466,7 +5136,7 @@
           {
             "name": "flatted",
             "purl": "",
-            "version": "3.3.3"
+            "version": "3.4.4"
           },
           {
             "name": "fn.name",
@@ -5476,7 +5146,7 @@
           {
             "name": "follow-redirects",
             "purl": "",
-            "version": "1.16.0"
+            "version": "1.16.2"
           },
           {
             "name": "for-each",
@@ -5496,7 +5166,7 @@
           {
             "name": "form-data",
             "purl": "",
-            "version": "4.0.5"
+            "version": "4.0.6"
           },
           {
             "name": "formidable",
@@ -5536,7 +5206,7 @@
           {
             "name": "fs-minipass",
             "purl": "",
-            "version": "2.1.0"
+            "version": "3.0.3"
           },
           {
             "name": "fs.realpath",
@@ -5557,11 +5227,6 @@
             "name": "functions-have-names",
             "purl": "",
             "version": "1.2.3"
-          },
-          {
-            "name": "gauge",
-            "purl": "",
-            "version": "4.0.4"
           },
           {
             "name": "gen-docs",
@@ -5589,11 +5254,6 @@
             "version": "1.3.0"
           },
           {
-            "name": "get-package-type",
-            "purl": "",
-            "version": "0.1.0"
-          },
-          {
             "name": "get-paths",
             "purl": "",
             "version": "0.0.7"
@@ -5601,7 +5261,7 @@
           {
             "name": "get-port",
             "purl": "",
-            "version": "5.1.1"
+            "version": "7.2.0"
           },
           {
             "name": "get-proto",
@@ -5611,7 +5271,7 @@
           {
             "name": "get-stream",
             "purl": "",
-            "version": "3.0.0"
+            "version": "5.2.0"
           },
           {
             "name": "get-symbol-description",
@@ -5724,11 +5384,6 @@
             "version": "4.0.1"
           },
           {
-            "name": "handlebars",
-            "purl": "",
-            "version": "4.7.8"
-          },
-          {
             "name": "has-bigints",
             "purl": "",
             "version": "1.0.2"
@@ -5757,11 +5412,6 @@
             "name": "has-tostringtag",
             "purl": "",
             "version": "1.0.2"
-          },
-          {
-            "name": "has-unicode",
-            "purl": "",
-            "version": "2.0.1"
           },
           {
             "name": "hasha",
@@ -5809,14 +5459,9 @@
             "version": "1.0.3"
           },
           {
-            "name": "html-escaper",
-            "purl": "",
-            "version": "2.0.2"
-          },
-          {
             "name": "html-to-text",
             "purl": "",
-            "version": "9.0.5"
+            "version": "10.0.1"
           },
           {
             "name": "html-url-attributes",
@@ -5826,12 +5471,12 @@
           {
             "name": "htmlparser2",
             "purl": "",
-            "version": "5.0.1"
+            "version": "10.1.0"
           },
           {
             "name": "http-cache-semantics",
             "purl": "",
-            "version": "4.1.1"
+            "version": "4.3.0"
           },
           {
             "name": "http-errors",
@@ -5841,7 +5486,7 @@
           {
             "name": "http-proxy-agent",
             "purl": "",
-            "version": "4.0.1"
+            "version": "7.0.2"
           },
           {
             "name": "http-signature",
@@ -5869,11 +5514,6 @@
             "version": "3.33.2"
           },
           {
-            "name": "humanize-ms",
-            "purl": "",
-            "version": "1.2.1"
-          },
-          {
             "name": "husky",
             "purl": "",
             "version": "9.1.7"
@@ -5881,7 +5521,7 @@
           {
             "name": "i18n",
             "purl": "",
-            "version": "0.15.1"
+            "version": "0.15.4"
           },
           {
             "name": "i18n-locales",
@@ -5891,7 +5531,7 @@
           {
             "name": "iconv-lite",
             "purl": "",
-            "version": "0.4.24"
+            "version": "0.6.3"
           },
           {
             "name": "ieee754",
@@ -5914,11 +5554,6 @@
             "version": "3.3.1"
           },
           {
-            "name": "import-local",
-            "purl": "",
-            "version": "3.2.0"
-          },
-          {
             "name": "import-meta-resolve",
             "purl": "",
             "version": "4.1.0"
@@ -5927,16 +5562,6 @@
             "name": "imurmurhash",
             "purl": "",
             "version": "0.1.4"
-          },
-          {
-            "name": "indent-string",
-            "purl": "",
-            "version": "4.0.0"
-          },
-          {
-            "name": "infer-owner",
-            "purl": "",
-            "version": "1.0.4"
           },
           {
             "name": "inflight",
@@ -5961,7 +5586,7 @@
           {
             "name": "inquirer",
             "purl": "",
-            "version": "8.2.5"
+            "version": "8.2.7"
           },
           {
             "name": "internal-slot",
@@ -5976,7 +5601,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.1.0"
+            "version": "10.7.5"
           },
           {
             "name": "ipaddr.js",
@@ -6056,7 +5681,7 @@
           {
             "name": "is-docker",
             "purl": "",
-            "version": "2.2.1"
+            "version": "3.0.0"
           },
           {
             "name": "is-expression",
@@ -6079,11 +5704,6 @@
             "version": "3.0.0"
           },
           {
-            "name": "is-generator-fn",
-            "purl": "",
-            "version": "2.1.0"
-          },
-          {
             "name": "is-generator-function",
             "purl": "",
             "version": "1.0.10"
@@ -6099,6 +5719,11 @@
             "version": "2.0.1"
           },
           {
+            "name": "is-inside-container",
+            "purl": "",
+            "version": "1.0.0"
+          },
+          {
             "name": "is-installed-globally",
             "purl": "",
             "version": "0.4.0"
@@ -6107,11 +5732,6 @@
             "name": "is-interactive",
             "purl": "",
             "version": "1.0.0"
-          },
-          {
-            "name": "is-lambda",
-            "purl": "",
-            "version": "1.0.1"
           },
           {
             "name": "is-map",
@@ -6176,7 +5796,7 @@
           {
             "name": "is-stream",
             "purl": "",
-            "version": "1.1.0"
+            "version": "2.0.1"
           },
           {
             "name": "is-string",
@@ -6231,7 +5851,7 @@
           {
             "name": "is-wsl",
             "purl": "",
-            "version": "2.2.0"
+            "version": "3.1.1"
           },
           {
             "name": "isarray",
@@ -6249,31 +5869,6 @@
             "version": "0.1.2"
           },
           {
-            "name": "istanbul-lib-coverage",
-            "purl": "",
-            "version": "3.2.2"
-          },
-          {
-            "name": "istanbul-lib-instrument",
-            "purl": "",
-            "version": "6.0.3"
-          },
-          {
-            "name": "istanbul-lib-report",
-            "purl": "",
-            "version": "3.0.1"
-          },
-          {
-            "name": "istanbul-lib-source-maps",
-            "purl": "",
-            "version": "5.0.6"
-          },
-          {
-            "name": "istanbul-reports",
-            "purl": "",
-            "version": "3.2.0"
-          },
-          {
             "name": "iterator.prototype",
             "purl": "",
             "version": "1.1.5"
@@ -6282,131 +5877,6 @@
             "name": "jackspeak",
             "purl": "",
             "version": "3.4.3"
-          },
-          {
-            "name": "jest",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-changed-files",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-circus",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-cli",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-config",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-diff",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-docblock",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-each",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-environment-node",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-haste-map",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-leak-detector",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-matcher-utils",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-message-util",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-mock",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-pnp-resolver",
-            "purl": "",
-            "version": "1.2.3"
-          },
-          {
-            "name": "jest-regex-util",
-            "purl": "",
-            "version": "30.0.1"
-          },
-          {
-            "name": "jest-resolve",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-resolve-dependencies",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-runner",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-runtime",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-snapshot",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-util",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-validate",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-watcher",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
-            "name": "jest-worker",
-            "purl": "",
-            "version": "30.2.0"
           },
           {
             "name": "jiti",
@@ -6426,7 +5896,7 @@
           {
             "name": "js-yaml",
             "purl": "",
-            "version": "3.14.2"
+            "version": "4.3.2"
           },
           {
             "name": "jsbn",
@@ -6544,11 +6014,6 @@
             "version": "0.6.0"
           },
           {
-            "name": "leven",
-            "purl": "",
-            "version": "3.1.0"
-          },
-          {
             "name": "levn",
             "purl": "",
             "version": "0.4.1"
@@ -6561,7 +6026,7 @@
           {
             "name": "libmime",
             "purl": "",
-            "version": "5.3.6"
+            "version": "5.4.3"
           },
           {
             "name": "libqp",
@@ -6586,7 +6051,7 @@
           {
             "name": "linkify-it",
             "purl": "",
-            "version": "5.0.0"
+            "version": "5.0.2"
           },
           {
             "name": "lint-staged",
@@ -6596,7 +6061,7 @@
           {
             "name": "listr2",
             "purl": "",
-            "version": "3.14.0"
+            "version": "9.0.5"
           },
           {
             "name": "ljharb-monorepo-symlink-test",
@@ -6606,17 +6071,17 @@
           {
             "name": "locate-path",
             "purl": "",
-            "version": "5.0.0"
+            "version": "6.0.0"
           },
           {
             "name": "lodash",
             "purl": "",
-            "version": "4.17.21"
+            "version": "4.18.1"
           },
           {
             "name": "lodash-es",
             "purl": "",
-            "version": "4.17.23"
+            "version": "4.18.1"
           },
           {
             "name": "lodash.camelcase",
@@ -6652,11 +6117,6 @@
             "name": "lodash.map",
             "purl": "",
             "version": "4.6.0"
-          },
-          {
-            "name": "lodash.memoize",
-            "purl": "",
-            "version": "4.1.2"
           },
           {
             "name": "lodash.merge",
@@ -6696,7 +6156,7 @@
           {
             "name": "log-update",
             "purl": "",
-            "version": "4.0.0"
+            "version": "6.1.0"
           },
           {
             "name": "logform",
@@ -6746,17 +6206,7 @@
           {
             "name": "mailparser",
             "purl": "",
-            "version": "3.7.2"
-          },
-          {
-            "name": "mailsplit",
-            "purl": "",
-            "version": "5.4.2"
-          },
-          {
-            "name": "make-dir",
-            "purl": "",
-            "version": "4.0.0"
+            "version": "3.9.20"
           },
           {
             "name": "make-error",
@@ -6771,12 +6221,7 @@
           {
             "name": "make-plural",
             "purl": "",
-            "version": "7.4.0"
-          },
-          {
-            "name": "makeerror",
-            "purl": "",
-            "version": "1.0.12"
+            "version": "7.5.0"
           },
           {
             "name": "math-interval-parser",
@@ -7036,12 +6481,12 @@
           {
             "name": "minimatch",
             "purl": "",
-            "version": "10.2.4"
+            "version": "10.2.6"
           },
           {
             "name": "minimist",
             "purl": "",
-            "version": "1.2.7"
+            "version": "1.2.8"
           },
           {
             "name": "minipass",
@@ -7051,12 +6496,12 @@
           {
             "name": "minipass-collect",
             "purl": "",
-            "version": "1.0.2"
+            "version": "2.0.1"
           },
           {
             "name": "minipass-fetch",
             "purl": "",
-            "version": "1.4.1"
+            "version": "5.0.2"
           },
           {
             "name": "minipass-flush",
@@ -7071,12 +6516,12 @@
           {
             "name": "minipass-sized",
             "purl": "",
-            "version": "1.0.3"
+            "version": "2.0.0"
           },
           {
             "name": "minizlib",
             "purl": "",
-            "version": "2.1.2"
+            "version": "3.1.0"
           },
           {
             "name": "mkdirp",
@@ -7091,12 +6536,12 @@
           {
             "name": "moment",
             "purl": "",
-            "version": "2.30.1"
+            "version": "2.31.0"
           },
           {
             "name": "moo",
             "purl": "",
-            "version": "0.5.2"
+            "version": "0.5.3"
           },
           {
             "name": "ms",
@@ -7106,7 +6551,7 @@
           {
             "name": "multer",
             "purl": "",
-            "version": "2.1.1"
+            "version": "2.5.0"
           },
           {
             "name": "multimatch",
@@ -7141,7 +6586,7 @@
           {
             "name": "nanoid",
             "purl": "",
-            "version": "3.3.12"
+            "version": "3.3.20"
           },
           {
             "name": "napi-build-utils",
@@ -7161,22 +6606,12 @@
           {
             "name": "negotiator",
             "purl": "",
-            "version": "0.6.4"
-          },
-          {
-            "name": "neo-async",
-            "purl": "",
-            "version": "2.6.2"
+            "version": "1.0.0"
           },
           {
             "name": "next",
             "purl": "",
-            "version": "16.2.6"
-          },
-          {
-            "name": "nice-try",
-            "purl": "",
-            "version": "1.0.5"
+            "version": "16.4.2"
           },
           {
             "name": "no-case",
@@ -7191,7 +6626,7 @@
           {
             "name": "node-addon-api",
             "purl": "",
-            "version": "7.1.1"
+            "version": "8.5.0"
           },
           {
             "name": "node-exports-info",
@@ -7214,14 +6649,9 @@
             "version": "4.8.4"
           },
           {
-            "name": "node-int64",
-            "purl": "",
-            "version": "0.4.0"
-          },
-          {
             "name": "node-releases",
             "purl": "",
-            "version": "2.0.38"
+            "version": "2.0.60"
           },
           {
             "name": "node-schedule",
@@ -7231,7 +6661,7 @@
           {
             "name": "nodemailer",
             "purl": "",
-            "version": "6.10.0"
+            "version": "10.2.1"
           },
           {
             "name": "nodemon",
@@ -7246,7 +6676,7 @@
           {
             "name": "nopt",
             "purl": "",
-            "version": "5.0.0"
+            "version": "9.0.0"
           },
           {
             "name": "normalize-path",
@@ -7256,12 +6686,7 @@
           {
             "name": "npm-run-path",
             "purl": "",
-            "version": "2.0.2"
-          },
-          {
-            "name": "npmlog",
-            "purl": "",
-            "version": "6.0.2"
+            "version": "4.0.1"
           },
           {
             "name": "nth-check",
@@ -7346,7 +6771,7 @@
           {
             "name": "open",
             "purl": "",
-            "version": "7.4.2"
+            "version": "10.2.0"
           },
           {
             "name": "openpgp",
@@ -7364,11 +6789,6 @@
             "version": "5.4.1"
           },
           {
-            "name": "os-tmpdir",
-            "purl": "",
-            "version": "1.0.2"
-          },
-          {
             "name": "ospath",
             "purl": "",
             "version": "1.2.2"
@@ -7381,42 +6801,32 @@
           {
             "name": "p-event",
             "purl": "",
-            "version": "4.2.0"
-          },
-          {
-            "name": "p-finally",
-            "purl": "",
-            "version": "1.0.0"
+            "version": "6.0.1"
           },
           {
             "name": "p-limit",
             "purl": "",
-            "version": "2.3.0"
+            "version": "3.1.0"
           },
           {
             "name": "p-locate",
             "purl": "",
-            "version": "4.1.0"
+            "version": "5.0.0"
           },
           {
             "name": "p-map",
             "purl": "",
-            "version": "4.0.0"
+            "version": "7.0.4"
           },
           {
             "name": "p-timeout",
             "purl": "",
-            "version": "3.2.0"
-          },
-          {
-            "name": "p-try",
-            "purl": "",
-            "version": "2.2.0"
+            "version": "6.1.4"
           },
           {
             "name": "p-wait-for",
             "purl": "",
-            "version": "3.2.0"
+            "version": "5.0.2"
           },
           {
             "name": "package-json-from-dist",
@@ -7481,7 +6891,7 @@
           {
             "name": "path-key",
             "purl": "",
-            "version": "2.0.1"
+            "version": "3.1.1"
           },
           {
             "name": "path-parse",
@@ -7506,7 +6916,7 @@
           {
             "name": "peberminta",
             "purl": "",
-            "version": "0.9.0"
+            "version": "0.10.0"
           },
           {
             "name": "pend",
@@ -7566,7 +6976,7 @@
           {
             "name": "picomatch",
             "purl": "",
-            "version": "2.3.1"
+            "version": "2.3.2"
           },
           {
             "name": "pify",
@@ -7577,11 +6987,6 @@
             "name": "pirates",
             "purl": "",
             "version": "4.0.7"
-          },
-          {
-            "name": "pkg-dir",
-            "purl": "",
-            "version": "4.2.0"
           },
           {
             "name": "plimit-lit",
@@ -7596,7 +7001,7 @@
           {
             "name": "postcss",
             "purl": "",
-            "version": "8.4.31"
+            "version": "8.5.23"
           },
           {
             "name": "postcss-import",
@@ -7684,14 +7089,9 @@
             "version": "5.6.0"
           },
           {
-            "name": "pretty-format",
-            "purl": "",
-            "version": "30.2.0"
-          },
-          {
             "name": "preview-email",
             "purl": "",
-            "version": "3.1.0"
+            "version": "3.4.1"
           },
           {
             "name": "proc-log",
@@ -7714,16 +7114,6 @@
             "version": "7.3.1"
           },
           {
-            "name": "promise-inflight",
-            "purl": "",
-            "version": "1.0.1"
-          },
-          {
-            "name": "promise-retry",
-            "purl": "",
-            "version": "2.0.1"
-          },
-          {
             "name": "prop-types",
             "purl": "",
             "version": "15.8.1"
@@ -7741,7 +7131,7 @@
           {
             "name": "proxy-addr",
             "purl": "",
-            "version": "2.0.7"
+            "version": "2.0.8"
           },
           {
             "name": "proxy-from-env",
@@ -7829,14 +7219,9 @@
             "version": "2.3.1"
           },
           {
-            "name": "pure-rand",
-            "purl": "",
-            "version": "7.0.1"
-          },
-          {
             "name": "qs",
             "purl": "",
-            "version": "6.14.1"
+            "version": "6.17.0"
           },
           {
             "name": "queue-lit",
@@ -8064,11 +7449,6 @@
             "version": "1.22.11"
           },
           {
-            "name": "resolve-cwd",
-            "purl": "",
-            "version": "3.0.0"
-          },
-          {
             "name": "resolve-dir",
             "purl": "",
             "version": "1.0.1"
@@ -8089,11 +7469,6 @@
             "version": "3.1.0"
           },
           {
-            "name": "retry",
-            "purl": "",
-            "version": "0.12.0"
-          },
-          {
             "name": "reusify",
             "purl": "",
             "version": "1.0.4"
@@ -8102,11 +7477,6 @@
             "name": "rfdc",
             "purl": "",
             "version": "1.4.1"
-          },
-          {
-            "name": "rimraf",
-            "purl": "",
-            "version": "3.0.2"
           },
           {
             "name": "rndm",
@@ -8121,7 +7491,7 @@
           {
             "name": "run-applescript",
             "purl": "",
-            "version": "3.2.0"
+            "version": "5.0.0"
           },
           {
             "name": "run-async",
@@ -8186,7 +7556,7 @@
           {
             "name": "seerr",
             "purl": "",
-            "version": "3.5.1"
+            "version": "3.5.2"
           },
           {
             "name": "selderee",
@@ -8196,7 +7566,7 @@
           {
             "name": "semver",
             "purl": "",
-            "version": "5.7.2"
+            "version": "6.3.1"
           },
           {
             "name": "send",
@@ -8212,11 +7582,6 @@
             "name": "server-only",
             "purl": "",
             "version": "0.0.1"
-          },
-          {
-            "name": "set-blocking",
-            "purl": "",
-            "version": "2.0.0"
           },
           {
             "name": "set-function-length",
@@ -8246,17 +7611,17 @@
           {
             "name": "sharp",
             "purl": "",
-            "version": "0.34.5"
+            "version": "0.35.5"
           },
           {
             "name": "shebang-command",
             "purl": "",
-            "version": "1.2.0"
+            "version": "2.0.0"
           },
           {
             "name": "shebang-regex",
             "purl": "",
-            "version": "1.0.0"
+            "version": "3.0.0"
           },
           {
             "name": "side-channel",
@@ -8306,7 +7671,7 @@
           {
             "name": "slice-ansi",
             "purl": "",
-            "version": "3.0.0"
+            "version": "7.1.2"
           },
           {
             "name": "slick",
@@ -8326,12 +7691,12 @@
           {
             "name": "socks",
             "purl": "",
-            "version": "2.8.4"
+            "version": "2.8.10"
           },
           {
             "name": "socks-proxy-agent",
             "purl": "",
-            "version": "6.2.1"
+            "version": "8.0.5"
           },
           {
             "name": "sorted-array-functions",
@@ -8346,12 +7711,7 @@
           {
             "name": "source-map-js",
             "purl": "",
-            "version": "1.2.1"
-          },
-          {
-            "name": "source-map-support",
-            "purl": "",
-            "version": "0.5.13"
+            "version": "1.2.2"
           },
           {
             "name": "space-separated-tokens",
@@ -8364,11 +7724,6 @@
             "version": "4.2.0"
           },
           {
-            "name": "sprintf-js",
-            "purl": "",
-            "version": "1.0.3"
-          },
-          {
             "name": "sql-highlight",
             "purl": "",
             "version": "6.1.0"
@@ -8376,7 +7731,7 @@
           {
             "name": "sqlite3",
             "purl": "",
-            "version": "5.1.7"
+            "version": "6.0.1"
           },
           {
             "name": "sshpk",
@@ -8399,11 +7754,6 @@
             "version": "0.0.10"
           },
           {
-            "name": "stack-utils",
-            "purl": "",
-            "version": "2.0.6"
-          },
-          {
             "name": "statuses",
             "purl": "",
             "version": "2.0.2"
@@ -8422,11 +7772,6 @@
             "name": "string-argv",
             "purl": "",
             "version": "0.3.2"
-          },
-          {
-            "name": "string-length",
-            "purl": "",
-            "version": "4.0.2"
           },
           {
             "name": "string-width",
@@ -8482,11 +7827,6 @@
             "name": "strip-bom",
             "purl": "",
             "version": "3.0.0"
-          },
-          {
-            "name": "strip-eof",
-            "purl": "",
-            "version": "1.0.0"
           },
           {
             "name": "strip-final-newline",
@@ -8551,7 +7891,7 @@
           {
             "name": "svgo",
             "purl": "",
-            "version": "3.3.3"
+            "version": "3.3.5"
           },
           {
             "name": "swagger-ui-dist",
@@ -8576,7 +7916,7 @@
           {
             "name": "systeminformation",
             "purl": "",
-            "version": "5.31.5"
+            "version": "5.33.17"
           },
           {
             "name": "tabbable",
@@ -8596,7 +7936,7 @@
           {
             "name": "tar",
             "purl": "",
-            "version": "6.2.1"
+            "version": "7.5.22"
           },
           {
             "name": "tar-fs",
@@ -8607,11 +7947,6 @@
             "name": "tar-stream",
             "purl": "",
             "version": "2.2.0"
-          },
-          {
-            "name": "test-exclude",
-            "purl": "",
-            "version": "6.0.0"
           },
           {
             "name": "text-hex",
@@ -8671,7 +8006,7 @@
           {
             "name": "tlds",
             "purl": "",
-            "version": "1.255.0"
+            "version": "1.261.0"
           },
           {
             "name": "tldts",
@@ -8686,12 +8021,7 @@
           {
             "name": "tmp",
             "purl": "",
-            "version": "0.0.33"
-          },
-          {
-            "name": "tmpl",
-            "purl": "",
-            "version": "1.0.5"
+            "version": "0.2.7"
           },
           {
             "name": "to-buffer",
@@ -8769,11 +8099,6 @@
             "version": "0.1.13"
           },
           {
-            "name": "ts-jest",
-            "purl": "",
-            "version": "29.4.6"
-          },
-          {
             "name": "ts-node",
             "purl": "",
             "version": "10.9.2"
@@ -8791,7 +8116,7 @@
           {
             "name": "tslib",
             "purl": "",
-            "version": "1.14.1"
+            "version": "2.8.1"
           },
           {
             "name": "tsscmp",
@@ -8812,11 +8137,6 @@
             "name": "type-check",
             "purl": "",
             "version": "0.4.0"
-          },
-          {
-            "name": "type-detect",
-            "purl": "",
-            "version": "4.0.8"
           },
           {
             "name": "type-fest",
@@ -8849,11 +8169,6 @@
             "version": "1.0.7"
           },
           {
-            "name": "typedarray",
-            "purl": "",
-            "version": "0.0.6"
-          },
-          {
             "name": "typeorm",
             "purl": "",
             "version": "0.3.31"
@@ -8876,17 +8191,12 @@
           {
             "name": "ua-parser-js",
             "purl": "",
-            "version": "2.0.9"
+            "version": "2.0.10"
           },
           {
             "name": "uc.micro",
             "purl": "",
             "version": "2.1.0"
-          },
-          {
-            "name": "uglify-js",
-            "purl": "",
-            "version": "3.19.3"
           },
           {
             "name": "uid-safe",
@@ -8906,7 +8216,7 @@
           {
             "name": "underscore",
             "purl": "",
-            "version": "1.13.7"
+            "version": "1.13.8"
           },
           {
             "name": "underscore.deep",
@@ -8916,7 +8226,7 @@
           {
             "name": "undici",
             "purl": "",
-            "version": "6.25.0"
+            "version": "6.29.1"
           },
           {
             "name": "undici-types",
@@ -8947,16 +8257,6 @@
             "name": "unified",
             "purl": "",
             "version": "11.0.5"
-          },
-          {
-            "name": "unique-filename",
-            "purl": "",
-            "version": "1.1.1"
-          },
-          {
-            "name": "unique-slug",
-            "purl": "",
-            "version": "2.0.2"
           },
           {
             "name": "unist-util-is",
@@ -9006,7 +8306,7 @@
           {
             "name": "update-browserslist-db",
             "purl": "",
-            "version": "1.2.3"
+            "version": "1.3.4"
           },
           {
             "name": "uri-js",
@@ -9037,11 +8337,6 @@
             "name": "v8-compile-cache-lib",
             "purl": "",
             "version": "3.0.1"
-          },
-          {
-            "name": "v8-to-istanbul",
-            "purl": "",
-            "version": "9.3.0"
           },
           {
             "name": "valid-data-url",
@@ -9077,11 +8372,6 @@
             "name": "void-elements",
             "purl": "",
             "version": "3.1.0"
-          },
-          {
-            "name": "walker",
-            "purl": "",
-            "version": "1.0.8"
           },
           {
             "name": "warning",
@@ -9149,11 +8439,6 @@
             "version": "1.1.19"
           },
           {
-            "name": "wide-align",
-            "purl": "",
-            "version": "1.1.5"
-          },
-          {
             "name": "wink-jaro-distance",
             "purl": "",
             "version": "2.0.0"
@@ -9184,11 +8469,6 @@
             "version": "1.2.5"
           },
           {
-            "name": "wordwrap",
-            "purl": "",
-            "version": "1.0.0"
-          },
-          {
             "name": "wrap-ansi",
             "purl": "",
             "version": "6.2.0"
@@ -9199,9 +8479,14 @@
             "version": "1.0.2"
           },
           {
-            "name": "write-file-atomic",
+            "name": "ws",
             "purl": "",
-            "version": "5.0.1"
+            "version": "7.5.13"
+          },
+          {
+            "name": "wsl-utils",
+            "purl": "",
+            "version": "0.1.0"
           },
           {
             "name": "xml2js",
@@ -9231,7 +8516,7 @@
           {
             "name": "yaml",
             "purl": "",
-            "version": "1.10.2"
+            "version": "1.10.3"
           },
           {
             "name": "yargs",
@@ -9246,7 +8531,7 @@
           {
             "name": "yauzl",
             "purl": "",
-            "version": "2.10.0"
+            "version": "3.4.0"
           },
           {
             "name": "yn",
@@ -9266,7 +8551,7 @@
           {
             "name": "zod",
             "purl": "",
-            "version": "4.3.6"
+            "version": "4.6.7"
           },
           {
             "name": "zod-validation-error",
@@ -9306,12 +8591,12 @@
         "freebsd": 234,
         "go": 0,
         "java": 0,
-        "node": 1517,
+        "node": 1374,
         "php": 0,
         "python": 3,
         "ruby": 0,
         "rust": 0,
-        "total": 1754
+        "total": 1611
       }
     }
   }
