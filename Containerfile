@@ -75,7 +75,7 @@ node /tmp/patch-swc.js "${NEXT_DIR}"
 WASM
 RUN chmod +x /usr/local/bin/setup-next-wasm.sh
 
-# seerr's next.config wires SVGR only for Turbopack. We build with --webpack
+# seerr's next.config (.mjs since 3.5.2, .ts before) wires SVGR only for Turbopack. We build with --webpack
 # (no FreeBSD native bindings), which ignores that, so SVG imports fall back to
 # static images and crash SSR ("Element type is invalid"). Inject the equivalent
 # webpack SVGR rule so SVGs become React components like Turbopack produces.
@@ -83,8 +83,9 @@ COPY <<'SVGR' /tmp/patch-svgr.js
 const fs = require('fs');
 const p = process.argv[2];
 let s = fs.readFileSync(p, 'utf8');
-const anchor = 'const nextConfig: NextConfig = {';
-if (!s.includes(anchor)) { console.error('SVGR patch: anchor not found in ' + p); process.exit(1); }
+const m = s.match(/const nextConfig(: NextConfig)? = \{/);
+if (!m) { console.error('SVGR patch: anchor not found in ' + p); process.exit(1); }
+const anchor = m[0];
 const inject = `
   webpack(config) {
     const r = config.module.rules.find((x) => x.test && x.test.test && x.test.test('.svg'));
@@ -120,7 +121,7 @@ RUN setup-next-wasm.sh
 
 # next build defaults to Turbopack (no FreeBSD native bindings) -> force webpack,
 # and add the SVGR webpack rule that the Turbopack-only config would otherwise skip.
-RUN node /tmp/patch-svgr.js next.config.ts && \
+RUN node /tmp/patch-svgr.js next.config.* && \
     node_modules/.bin/next build --webpack && \
     pnpm build:server && \
     rm -rf .next/cache $(pnpm store path)
