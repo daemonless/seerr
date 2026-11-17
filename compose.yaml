@@ -37,7 +37,9 @@ x-daemonless:
       DB_HOST: "PostgreSQL host (Database choice)"
       DB_PORT: "PostgreSQL port (Database choice)"
       DB_USER: "PostgreSQL user (Database choice)"
-      DB_PASS: "PostgreSQL password (Database choice)"
+      DB_PASS:
+        desc: "PostgreSQL password (Database choice)"
+        type: secret
       DB_NAME: "PostgreSQL database name (Database choice)"
     volumes:
       /config: "Configuration and database directory"
